@@ -1,0 +1,19 @@
+<div class="app-container">
+  <header class="header">
+    <p>{{title}}</p>
+  </header>
+  <div></div>
+  <aside class="side-bar">
+    <div class="nav-bar">
+      <ul>
+        <li><a routerLink="/">首页</a></li>
+        <li><a routerLink="react">react</a></li>
+        <li><a routerLink="vue">vue</a></li>
+        <li><a routerLink="angular">angular</a></li>
+      </ul>
+      <div class="user-opt"><a (click)="gotoBackend()">登录</a></div>
+    </div>
+  </aside>
+  <div id="subappViewport" class="sub-viewport"></div>
+</div>
+<router-outlet></router-outlet>
