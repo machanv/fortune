@@ -1,19 +1,20 @@
 <div class="app-container">
-  <header class="header">
-    <p>{{title}}</p>
-  </header>
-  <div></div>
   <aside class="side-bar">
     <div class="nav-bar">
+      <header class="header">
+        <p>{{title}}</p>
+      </header>
       <ul>
-        <li><a routerLink="/">首页</a></li>
+        <li *ngFor="let item of navList">
+          <a routerLink="{{item.link}}"><span class="iconfont {{item.icon}}"></span>{{item.name}}</a>
+        </li>
+        <!-- <li><a routerLink="/"><span class="iconfont iconindex"></span>首页</a></li>
         <li><a routerLink="react">react</a></li>
         <li><a routerLink="vue">vue</a></li>
-        <li><a routerLink="angular">angular</a></li>
+        <li><a routerLink="angular">angular</a></li> -->
       </ul>
-      <div class="user-opt"><a (click)="gotoBackend()">登录</a></div>
     </div>
+    <div class="login"><a (click)="gotoBackend()">登录</a></div>
   </aside>
   <div id="subappViewport" class="sub-viewport"></div>
 </div>
-<router-outlet></router-outlet>

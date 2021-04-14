@@ -1,33 +1,64 @@
-.app-container {
-  width: 100%;
-  header {
-    width: 100%;
-    height: 40px;
+@import "../assets/css/variable.scss";
 
-    .user-opt {
-      float: right;
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  .side-bar {
+    position: relative;
+    flex: 1;
+    background-color: $subColor;
+    header {
+      width: 100%;
+      height: 8rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      background-color: $theme;
+      color: $white;
+      border-bottom: 1px solid $white;
     }
-  }
-  .main-container {
-    display: flex;
     .nav-bar {
-      // max-width: 1440px;
-      float: left;
-      width: 200px;
-      margin: 0 auto;
-      padding: 1rem;
-      max-width: 1000px;
+      display: block;
       ul {
-        // display: flex;
+        // margin-top: 1rem;
+        width: 100%;
         li {
-        //   display: inline-block;
+          display: block;
           padding: 0.5rem 2rem;
+          a {
+            display: block;
+            color: $white;
+            line-height: 3rem;
+          }
+          &:hover {
+            background-color: $theme;
+            cursor: pointer;
+          }
         }
       }
     }
-    .sub-viewport{
-        float: left;
-
+    .login {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 3.5rem;
+      line-height: 3rem;
+      text-align: center;
+      border-top: 1px solid $borderColor;
+      a {
+        color: $theme;
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
+  }
+
+  .sub-viewport {
+    flex: 5;
+    height: 100%;
   }
 }

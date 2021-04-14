@@ -1,0 +1,30 @@
+{
+  "id": "2486756",
+  "name": "fortune",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "用于fortune的icon",
+  "glyphs": [
+    {
+      "icon_id": "7155218",
+      "name": "菜单",
+      "font_class": "dashboard",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "7708047",
+      "name": "首页",
+      "font_class": "index",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "9559033",
+      "name": "菜单",
+      "font_class": "menu",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    }
+  ]
+}

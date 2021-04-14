@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  
+  vue content
   </div>
 </template>
 <script>

@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1618392951251'); /* IE9 */
+  src: url('iconfont.eot?t=1618392951251#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPwAAsAAAAACHwAAAOiAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqEPINcATYCJAMQCwoABCAFhG0HQhtIB8iemjyptYDEswBAgc+YoBAP3++Xnvvf3c0LowKUmVgeH1ZR4YLyCMZUmBpRW826ev9XZ37HR7aPQXcFDm4FZoPkOPxkpYBOiSYmWDvRVGdK8h8YMs1FQ//nmOnSokDyA41khhnJo73ReBStA6u6iCK5E8Z7iLe6tMO+nkCPBe1xh30Hj4Ycia4LxFNDlyEnZZA15aEK7ZKjCfEcWmqz0vEcwDP/7+MfeCMHNFoF6Najuz4adP9ZbBhvpS2XLgKE49nAn0TBJpDEQ6njCh8mNvF61NkZtoGqahhrAhmWhqK9KKr5L4+iEUQbaGkf2MJk4WexLYiVCHQaUA4D0Q1cK0HFIL4C34Hi5syoUhnKoiw0o0JuXk0f/KAuHrxZzW271Uo6cAO8v05ACryq7dijiXbjjq1uM+aI1Xr04Ymjx4xjjTgkaTUvT+W4BLbqXfUDN6zrq24mbo27/x71oc+jT83+OBGLDmt9af7GjRwv6qtKtfWbtxwpkwjtjVSw+t35pNXHtm0tJxunFWzalNgq5q/abG2Y7SLW8+q4Oe/G8fnrY+QWxLb7xh/aFQv/heLnyZqqbaFo2Gsn7cWkqvHEiWJvseNv9BadDLngK6rcepL6T5z0Xm6PsMkzyWqMaE/57N6KalstlBSApteks5ld13fP0KHV1aja49+74zZ/90HnpJ+7hdM/pXOD/OsKn+w1rwa3x/51ibSa1VqAqlaRbgWx4/OOFJ3jGVgrUqv6l5fK+1eVdp/+jYF0dTrPbc5tUfwyiAF0HpVffBigc7J84EcCUL44HvzxZV6V3Ns8raDz/xzpktt+bP880/d3Tib0E/42YWvh/xW2rEtNTI2ZisQW6MXpWA6vq1yPHvzVDCN+juEaB7EtVEEI0OgyD0W1iEzsJrT02oK2agd6bOh3cq9RFC9SANYtJRCGnILGgG9QDHmBTOwPaJnwG9qGgoceF1Fyzl7LYYi9KJYZ1pAyGxlqNEIsMxOD8pFYj4dkmhT7tLGYmkYYeZzubLofjmA6xg5zhu5ljCBCo2HUl9wMh0JRFKPRAFaZ089YrKPLRcq+yKlGwyA6QGEyBtMgitkQgyoqgritGTH3+yNhurgQGa2pqbKPhVEmY3rEw8ndAtlPEWlVcy0vMc2g82IYAiGoqDCkL7FhITMRhcTKFwVgKsbJ3yMW05ELG5G2Cuf8qvAT7oMe9PEZDo7nMrhM6L6RTb8SlamWaUQ0PCsjjCNxAAAA') format('woff2'),
+  url('iconfont.woff?t=1618392951251') format('woff'),
+  url('iconfont.ttf?t=1618392951251') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1618392951251#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icondashboard:before {
+  content: "\e64f";
+}
+
+.iconindex:before {
+  content: "\e620";
+}
+
+.iconmenu:before {
+  content: "\e612";
+}
+
