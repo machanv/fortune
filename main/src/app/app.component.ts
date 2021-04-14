@@ -13,7 +13,7 @@ type NavItem = {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Fortune';
+  title:string = 'Fortune';
   navList: NavItem[] = [
     {
       name: '首页',

@@ -8,10 +8,6 @@
         <li *ngFor="let item of navList">
           <a routerLink="{{item.link}}"><span class="iconfont {{item.icon}}"></span>{{item.name}}</a>
         </li>
-        <!-- <li><a routerLink="/"><span class="iconfont iconindex"></span>首页</a></li>
-        <li><a routerLink="react">react</a></li>
-        <li><a routerLink="vue">vue</a></li>
-        <li><a routerLink="angular">angular</a></li> -->
       </ul>
     </div>
     <div class="login"><a (click)="gotoBackend()">登录</a></div>
