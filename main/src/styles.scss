@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'assets/font/iconfont/iconfont.css';
+@import "assets/font/iconfont/iconfont.css";
+@import "assets/css/variable.scss";
 
 html {
   font-size: 62.5%;
@@ -14,6 +15,7 @@ body {
   font: normal 100% Arial, sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
+  color: $defaultFontColor;
   div,
   ul,
   ol,
@@ -28,7 +30,7 @@ body {
     list-style: none;
   }
   a {
-    color: #00abfa;
+    color: $primaryColor;
   }
 }
 
@@ -49,4 +51,37 @@ body {
 
 .clearfix {
   zoom: 1;
+}
+
+button[type="button"] {
+  border-radius: 5px;
+  outline: none;
+}
+
+.btn {
+  padding: 5px 10px;
+  border-width: 1px;
+  border-style: solid;
+  color: $defaultWhite;
+}
+
+.btn-primary {
+  background-color: $primaryColor;
+}
+.btn-default {
+  background-color: $defaultWhite;
+}
+.btn-success {
+  background-color: $successColor;
+}
+.btn-wraning {
+  background-color: $warningColor;
+}
+.btn-danger {
+  background-color: $dangerColor;
+}
+.btn-group {
+  button {
+    display: inline-block;
+  }
 }

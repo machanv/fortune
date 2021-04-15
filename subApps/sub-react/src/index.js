@@ -5,18 +5,24 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-function render(props) {
+function render(props = {}) {
   const { container } = props;
   ReactDOM.render(
     <React.StrictMode>
       <App />
-    </React.StrictMode>,container?container.querySelector('#root'):document.getElementById("#root")
+    </React.StrictMode>,
+    container
+      ? container.querySelector("#root")
+      : document.getElementById("root")
   );
 }
 
-
 function storeTest(props) {
-  props.onGlobalStateChange((value, prev) => console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev), true);
+  props.onGlobalStateChange(
+    (value, prev) =>
+      console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev),
+    true
+  );
   props.setGlobalState({
     ignore: props.name,
     user: {
@@ -30,18 +36,22 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log('[react16] react app bootstraped');
+  console.log("[react16] react app bootstraped");
 }
 
 export async function mount(props) {
-  console.log('[react16] props from main framework', props);
+  console.log("[react16] props from main framework", props);
   storeTest(props);
   render(props);
 }
 
 export async function unmount(props) {
   const { container } = props;
-  ReactDOM.unmountComponentAtNode(container ? container.querySelector('#root') : document.querySelector('#root'));
+  ReactDOM.unmountComponentAtNode(
+    container
+      ? container.querySelector("#root")
+      : document.querySelector("#root")
+  );
 }
 
 // If you want to start measuring performance in your app, pass a function

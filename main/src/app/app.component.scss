@@ -16,9 +16,9 @@
       justify-content: center;
       flex-direction: column;
       text-align: center;
-      background-color: $theme;
-      color: $white;
-      border-bottom: 1px solid $white;
+      background-color: $primaryColor;
+      color: $defaultWhite;
+      border-bottom: 1px solid $defaultWhite;
     }
     .nav-bar {
       display: block;
@@ -30,13 +30,16 @@
           padding: 0.5rem 2rem;
           a {
             display: block;
-            color: $white;
+            color: $defaultWhite;
             line-height: 3rem;
           }
           &:hover {
-            background-color: $theme;
+            background-color: $primaryColor;
             cursor: pointer;
           }
+        }
+        li.selected{
+
         }
       }
     }
@@ -49,7 +52,7 @@
       text-align: center;
       border-top: 1px solid $borderColor;
       a {
-        color: $theme;
+        color: $primaryColor;
         &:hover {
           cursor: pointer;
         }

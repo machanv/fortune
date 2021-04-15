@@ -1,6 +1,14 @@
-$theme:#db5a6b;
-$subColor:#1e1b1f;
-$green:#29747b;
-$defaultFontColor:#333333;
-$borderColor:$theme;
-$white:#fffbf0;
+$primaryColor: #db5a6b;
+
+$successColor: #679b07;
+$dangerColor: #fa0303;
+$warningColor: #e28205;
+$defaultFontColor: #333333;
+
+$subColor: #1e1b1f;
+$green: #29747b;
+
+$borderColor: $primaryColor;
+$ivoryWhite: #fffbf0;
+
+$defaultWhite: #ffffff;

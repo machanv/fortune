@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-type NavItem = {
-  name: string;
-  link: string;
-  icon: string;
-};
+import { NavBar } from './api/meta';
+import { NavItem } from './api/model';
 
 @Component({
   selector: 'app-root',
@@ -13,29 +10,8 @@ type NavItem = {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title:string = 'Fortune';
-  navList: NavItem[] = [
-    {
-      name: '首页',
-      link: '/',
-      icon:'iconindex'
-    },
-    {
-      name: 'react',
-      link: 'react',
-      icon:''
-    },
-    {
-      name: 'vue',
-      link: 'vue',
-      icon:''
-    },
-    {
-      name: 'angular',
-      link: 'angular',
-      icon:''
-    },
-  ];
+  title: string = 'Fortune';
+  navList: NavItem[] = NavBar;
   constructor(private _router: Router) {}
 
   gotoBackend() {
