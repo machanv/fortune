@@ -5,7 +5,7 @@
         <p>{{title}}</p>
       </header>
       <ul>
-        <li *ngFor="let item of navList" [ngClass]="{'selected':item.selected}">
+        <li *ngFor="let item of navList" [ngClass]="{'selected':item.selected}" (click)="onSelected(item)">
           <a routerLink="{{item.link}}"><span class="iconfont {{item.icon}}"></span>{{item.name}}</a>
         </li>
       </ul>

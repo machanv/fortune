@@ -14,6 +14,11 @@ export class AppComponent {
   navList: NavItem[] = NavBar;
   constructor(private _router: Router) {}
 
+  onSelected(item: NavItem) {
+    this.navList.forEach(node => node.selected === false);
+    item.selected = true;
+  }
+
   gotoBackend() {
     this._router.navigate(['backend']);
   }
