@@ -10,7 +10,7 @@ import {
 } from 'qiankun';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import microApps from './main-app';
+import microApps from './micro-app';
 
 if (environment.production) {
   enableProdMode();

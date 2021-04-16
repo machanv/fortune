@@ -1,15 +1,14 @@
 <template>
   <div id="app">
-  vue content
+    <router-link to="/">Go to Foo</router-link>
+    <router-view></router-view>
   </div>
 </template>
 <script>
 export default {
-  name: 'App',
-  components: {
-  
-  }
-}
+  name: "App",
+  components: {},
+};
 </script>
 
 <style>

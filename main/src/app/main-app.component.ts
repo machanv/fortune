@@ -9,13 +9,13 @@ import { NavItem } from './api/model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class MainAppComponent {
   title: string = 'Fortune';
   navList: NavItem[] = NavBar;
   constructor(private _router: Router) {}
 
   onSelected(item: NavItem) {
-    this.navList.forEach(node => node.selected === false);
+    this.navList.forEach(node => node.selected = false);
     item.selected = true;
   }
 
