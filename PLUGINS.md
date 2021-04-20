@@ -2,8 +2,10 @@
 ## axios
 http://www.axios-js.com/
 
-# 动画插件
+## rem 适配
+px2rem-loader
 
+# 动画插件
 ## tweenjs
 http://www.createjs.cc/tweenjs/
 
