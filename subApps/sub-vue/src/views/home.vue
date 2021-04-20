@@ -6,9 +6,6 @@
 
 <script>
 export default {
-    name:'home',
-    setup() {
-        
-    },
+    name:'home'
 }
 </script>

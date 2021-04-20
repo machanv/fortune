@@ -1,4 +1,5 @@
 const { name } = require("./package");
+const path = require('path');
 
 module.exports = {
   devServer: {
@@ -13,4 +14,12 @@ module.exports = {
       jsonpFunction: `webpackJsonp_${name}`,
     },
   },
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'sass',
+      patterns: [
+        path.resolve(__dirname, './src/assets/styles/*.scss')      //你的.scss文件所在目录
+      ]
+    }
+  }
 };
