@@ -1,5 +1,5 @@
 const { name } = require("./package");
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   devServer: {
@@ -14,6 +14,13 @@ module.exports = {
       jsonpFunction: `webpackJsonp_${name}`,
     },
   },
+  // css: {
+  //   loaderOptions: {
+  //     sass: {
+  //       prependData: `@import "./src/assets/styles/*.scss";`,
+  //     },
+  //   },
+  // },
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'sass',
