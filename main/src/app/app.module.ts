@@ -1,14 +1,16 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
-import { MainAppComponent } from './main-app.component';
-import { EmptyComponent } from './components/empty/empty.component';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppRoutingModule} from './app-routing.module';
+import {MainAppComponent} from './main-app.component';
+import {EmptyComponent} from './components/empty/empty.component';
+import {CookieModule} from 'ngx-cookie';
+import {ApiModule} from './api/api.module';
 
 @NgModule({
   declarations: [MainAppComponent, EmptyComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, CookieModule.forRoot(), ApiModule],
   providers: [],
   bootstrap: [MainAppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
