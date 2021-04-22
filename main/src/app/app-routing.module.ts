@@ -5,18 +5,21 @@ import {LoginGuard} from './components/login/login.guard';
 import {LoginComponent} from './components/login/login.component';
 
 const routes: Routes = [
-  // { path: '/react'},
+  {
+    path: '',
+    loadChildren: () => import('./modules/index/index.module').then((m) => m.IndexModule),
+  }, {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'backend',
     loadChildren: () =>
       import('./modules/backend/backend.module').then((m) => m.BackendModule),
-  }, {
-    path: 'login',
-    component: LoginComponent,
-    // canActivate: [LoginGuard]
+    canActivate: [LoginGuard]
   },
-  {path: '**', component: EmptyComponent},
   {path: '', redirectTo: '', pathMatch: 'full'},
+  {path: '**', component: EmptyComponent},
 ];
 
 // routes.forEach(route => {
