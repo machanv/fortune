@@ -36,7 +36,7 @@ body {
     color: @primaryColor;
   }
 
-  div{
+  div {
     box-sizing: border-box;
   }
 }
@@ -72,13 +72,22 @@ body {
   width: 100%;
   margin-bottom: 1rem;
   clear: both;
+  zoom: 1;
 
   label {
-    //float: left;
+    float: left;
   }
 
   .form-control {
-    //float: left;
+    float: left;
+  }
+
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
   }
 }
 
