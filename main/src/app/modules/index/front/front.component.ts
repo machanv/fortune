@@ -14,16 +14,7 @@ export class FrontComponent implements OnInit {
   constructor(private router: Router) {
   }
 
-  ngOnInit(): void {
-    this.navList = NavBar;
+  ngOnInit() {
   }
 
-  onSelected(item: NavItem): void {
-    this.navList.forEach(node => node.selected = false);
-    item.selected = true;
-  }
-
-  gotoBackend(): void {
-    this.router.navigate(['login']);
-  }
 }

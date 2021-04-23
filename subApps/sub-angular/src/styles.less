@@ -1,1 +1,140 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/css/variable.less";
+
+html {
+  font-size: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font: normal 100% Arial, sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  color: @defaultFontColor;
+
+  div,
+  ul,
+  ol,
+  li,
+  p,
+  a {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: @primaryColor;
+  }
+
+  div{
+    box-sizing: border-box;
+  }
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.full-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.row {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  clear: both;
+
+  label {
+    //float: left;
+  }
+
+  .form-control {
+    //float: left;
+  }
+}
+
+.form-control {
+  width: 100%;
+  .border();
+  border-color: @lightgrey;
+  .border-radius();
+  font-size: 1.4rem;
+  line-height: 2;
+  outline: none;
+  display: block;
+}
+
+button[type="button"] {
+  .border-radius();
+  outline: none;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 0.8rem 1rem;
+  border-width: 1px;
+  border-style: solid;
+  color: @defaultWhite;
+}
+
+.btn-primary {
+  .linearBackground();
+}
+
+.btn-default {
+  background-color: @defaultWhite;
+}
+
+.btn-success {
+  background-color: @successColor;
+}
+
+.btn-wraning {
+  background-color: @warningColor;
+}
+
+.btn-danger {
+  background-color: @dangerColor;
+}
+
+.btn-group {
+  button {
+    display: inline-block;
+  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+

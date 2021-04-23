@@ -12,3 +12,9 @@ $borderColor: $primaryColor;
 $ivoryWhite: #fffbf0;
 
 $defaultWhite: #ffffff;
+
+@mixin border-radius {
+  -moz-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+}

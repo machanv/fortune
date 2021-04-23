@@ -1,6 +1,22 @@
 <div class="login-wrapper">
   <div class="login-container">
     <div>登录</div>
-    <div></div>
+    <div class="form-container">
+      <form (ngSubmit)="login()">
+        <div class="row">
+          <label>用户名</label>
+          <input type="text" class="form-control"/>
+        </div>
+        <div class="row">
+          <label>密码</label>
+          <input type="password" class="form-control"/>
+        </div>
+        <div class="row">
+          <label>验证码</label>
+          <a (click)="refreshVerifiCode()"><img [src]="verificationCode" rel="验证码"/></a>
+        </div>
+        <button type="button" class="btn btn-primary btn-block">登录</button>
+      </form>
+    </div>
   </div>
 </div>
