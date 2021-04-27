@@ -6,7 +6,8 @@
 <script>
 // import * as THREE from 'three';
 const THREE = require('three');
-const WEBGL = require('three/examples/jsm/WebGL.js');
+import { WEBGL } from 'three/examples/jsm/WebGL.js';
+
 export default {
   name: 'Index3D',
   data: () => {
@@ -24,11 +25,12 @@ export default {
 
   },
   mounted() {
-    this.element = document.querySelector('#threeContainer');
     this.supportWebGl();
   },
   methods: {
-    supportWebGl: function () {
+    supportWebGl() {
+      this.element = document.querySelector('#threeContainer');
+      this.scene = new THREE.Scene();
       if (WEBGL.isWebGLAvailable()) {
         this.initThree();
       } else {
@@ -36,11 +38,9 @@ export default {
         this.element.appendChild(warning);
       }
     },
-    initThree: function () {
+    initThree() {
       this.camera = new THREE.PerspectiveCamera(70, this.element.clientWidth / this.element.clientHeight, 0.1, 10);
       this.camera.position.z = 1;
-
-      this.scene = new THREE.Scene();
 
       this.renderer = new THREE.WebGL1Renderer();
       this.renderer.setSize(this.element.clientWidth, this.element.clientHeight);
