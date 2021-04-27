@@ -6,7 +6,7 @@
 <script>
 // import * as THREE from 'three';
 const THREE = require('three');
-
+const WEBGL = require('three/examples/jsm/WebGL.js');
 export default {
   name: 'Index3D',
   data: () => {
@@ -24,13 +24,19 @@ export default {
 
   },
   mounted() {
-    this.initThree();
-    this.initObj();
-    this.animate();
+    this.element = document.querySelector('#threeContainer');
+    this.supportWebGl();
   },
   methods: {
+    supportWebGl: function () {
+      if (WEBGL.isWebGLAvailable()) {
+        this.initThree();
+      } else {
+        var warning = WEBGL.getWebGLErrorMessage();
+        this.element.appendChild(warning);
+      }
+    },
     initThree: function () {
-      this.element = document.querySelector('#threeContainer');
       this.camera = new THREE.PerspectiveCamera(70, this.element.clientWidth / this.element.clientHeight, 0.1, 10);
       this.camera.position.z = 1;
 
@@ -39,6 +45,7 @@ export default {
       this.renderer = new THREE.WebGL1Renderer();
       this.renderer.setSize(this.element.clientWidth, this.element.clientHeight);
       this.element.appendChild(this.renderer.domElement);
+      this.initObj();
     },
     initObj() {
       this.geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -47,6 +54,7 @@ export default {
       this.scene.add(this.cube);
 
       this.camera.position.z = 5;
+      this.animate();
     },
     animate() {
       requestAnimationFrame(this.animate);
