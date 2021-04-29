@@ -8,10 +8,7 @@ import "./public-path";
 import routes from "./router";
 import store from "./store";
 
-import three from './common/three/stage';
-
 Vue.use(VueRouter);
-Vue.use(three);
 
 Vue.config.productionTip = false;
 

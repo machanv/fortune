@@ -4,9 +4,10 @@
   </div>
 </template>
 <script>
-// import * as THREE from 'three';
-const THREE = require('three');
+import * as THREE from 'three';
+// const THREE = require('three');
 import {WEBGL} from 'three/examples/jsm/WebGL.js';
+// import * as three from '../../common/three';
 
 export default {
   name: 'Index3D',
@@ -31,8 +32,8 @@ export default {
   methods: {
     supportWebGl() {
       this.element = document.querySelector('#threeContainer');
-      // this.scene = new THREE.Scene();
-      this.scene = this.create();
+      this.scene = new THREE.Scene();
+      // this.scene = three.create();
       if (WEBGL.isWebGLAvailable()) {
         this.initThree();
       } else {
@@ -41,7 +42,6 @@ export default {
       }
     },
     initThree() {
-
       this.camera = new THREE.PerspectiveCamera(70, this.element.clientWidth / this.element.clientHeight, 0.1, 10);
       this.camera.position.z = 1;
 
