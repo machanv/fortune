@@ -1,5 +1,7 @@
 <template>
   <div class="container">
+    <!--    <button v-on:click="mangerView">修改视角</button>-->
+    <button v-on:click="drwaLine">画线</button>
     <div id="threeContainer" class="three-container"></div>
   </div>
 </template>
@@ -20,7 +22,8 @@ export default {
       geometry: THREE.BoxGeometry,
       material: THREE.MeshBasicMaterial,
       cube: THREE.Mesh,
-      shaderMaterial: THREE.ShaderMaterial
+      shaderMaterial: THREE.ShaderMaterial,
+      line: THREE.Line
     }
   },
   created() {
@@ -63,6 +66,35 @@ export default {
       requestAnimationFrame(this.animate);
       this.cube.rotation.x += 0.01;
       this.cube.rotation.y += 0.01;
+      this.renderer.render(this.scene, this.camera);
+    },
+    mangerView() { // 修改视角，目前貌似有点问题
+      this.camera.position.set(0, 0, 100);
+      this.camera.lookAt(0, 0, 0);
+
+      this.renderer.render(this.scene, this.camera);
+    },
+    drwaLine() {
+      this.material = new THREE.LineBasicMaterial({color: 0x0000ff});
+      this.geometry = new THREE.BufferGeometry();
+
+      const vertices = new Float32Array([
+        -1.0, -1.0, 1.0,
+        1.0, -1.0, 1.0,
+        1.0, 1.0, 1.0,
+
+        1.0, 1.0, 1.0,
+        -1.0, 1.0, 1.0,
+        -1.0, -1.0, 1.0
+      ]);
+      this.geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+      // this.geometry.vertices.push(new THREE.Vector3(-10, 0, 0));
+      // this.geometry.vertices.push(new THREE.Vector3(0, 10, 0));
+      // this.geometry.vertices.push(new THREE.Vector3(10, 0, 0));
+
+      this.line = new THREE.Line(this.geometry, this.material);
+
+      this.scene.add(this.line);
       this.renderer.render(this.scene, this.camera);
     }
   }
