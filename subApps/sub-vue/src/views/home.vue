@@ -1,11 +1,20 @@
 <template>
-    <div>
-        
-    </div>
+  <div>
+    {{ count }}
+  </div>
 </template>
 
 <script>
 export default {
-    name:'home'
+  name: 'home',
+  data: () => {
+    return {
+      count: 0
+    }
+  }, methods: {
+    increment() {
+      this.count++;
+    }
+  }
 }
 </script>
