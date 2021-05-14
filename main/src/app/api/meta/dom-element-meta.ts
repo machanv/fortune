@@ -5,9 +5,9 @@ export const NavBar: NavItem[] = [
   {
     id: 0,
     name: '首页',
-    link: '/',
+    link: '',
     icon: 'iconindex',
-    selected: true,
+    selected: false,
   },
   {id: 1, name: 'react', link: 'react', icon: '', selected: false},
   {id: 2, name: 'vue', link: 'vue', icon: '', selected: false},

@@ -2,6 +2,9 @@
   <div id="app">
     <ul>
       <li>
+        <router-link to="/">首页</router-link>
+      </li>
+      <li>
         <router-link to="/2d">2D动画</router-link>
       </li>
       <li>
@@ -15,8 +18,11 @@
 </template>
 <script>
 
+import store from "./store";
+
 export default {
   name: "App",
+  store,
   components: {},
 };
 </script>

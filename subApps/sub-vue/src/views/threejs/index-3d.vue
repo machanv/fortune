@@ -110,7 +110,7 @@ export default {
 .three-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 2.5rem);
 }
 
 </style>

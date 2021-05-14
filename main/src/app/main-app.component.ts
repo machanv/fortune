@@ -1,5 +1,4 @@
-import {Component} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
 import {NavBar, NavItem} from './api/index';
 
 @Component({
@@ -7,20 +6,24 @@ import {NavBar, NavItem} from './api/index';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class MainAppComponent {
+export class MainAppComponent implements OnInit {
   title: string = 'Fortune';
   navList: NavItem[] = NavBar;
 
-  constructor(private router: Router) {
+  constructor() {
+  }
+
+  ngOnInit(): void {
+    const url = location.pathname.split('/');
+    this.navList.forEach(nav => {
+      if (nav.link === url[1]) {
+        nav.selected = true;
+      }
+    });
   }
 
   onSelected(item: NavItem): void {
     this.navList.forEach(node => node.selected = false);
     item.selected = true;
-  }
-
-  gotoBackend(): void {
-    // window.open(location.href + 'backend', '_blank');
-    // this.router.navigate(['login']);
   }
 }
