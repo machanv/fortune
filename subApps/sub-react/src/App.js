@@ -2,8 +2,8 @@
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Home from "./containers/home";
 import Algorithm from './containers/algorithm/algorithm';
-import './App.css';
-import './styles/common.css';
+import './App.less';
+import './styles/common.less';
 
 export default function App() {
   return (
