@@ -8,8 +8,8 @@ import './styles/common.less';
 export default function App() {
   return (
     <Router>
-      <div>
-        <nav>
+      <div className="app-container">
+        <nav className="nav-list">
           <ul>
             <li><Link to="/react">Home</Link></li>
             <li><Link to="/algorithm">算法</Link></li>
