@@ -22,8 +22,9 @@ class Easy extends React.Component {
   }
 
   onValueChange(event, state) {
+    const value = event.target.value;
     this.setState({
-      [state]: event.target.value
+      [state]: value.toLowerCase()
     });
     console.log(this.state);
   }
