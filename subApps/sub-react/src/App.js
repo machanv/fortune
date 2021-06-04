@@ -1,7 +1,5 @@
 // import logo from './logo.svg';
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import Home from "./containers/home";
-import Algorithm from './containers/algorithm/algorithm';
 import './App.less';
 import './styles/common.less';
 
@@ -11,16 +9,12 @@ export default function App() {
       <div className="app-container">
         <nav className="nav-list">
           <ul>
-            <li><Link to="/react">Home</Link></li>
-            <li><Link to="/algorithm">算法</Link></li>
+            <li><Link to="/inde">Home</Link></li>
           </ul>
         </nav>
         <Switch>
-          <Route path="/algorithm">
-            <Algorithm/>
-          </Route>
-          <Route path="/react">
-            <Home/>
+          <Route path="/inde">
+
           </Route>
         </Switch>
       </div>
