@@ -2,19 +2,15 @@
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import './App.less';
 import './styles/common.less';
+import Login from './containers/login/login';
 
 export default function App() {
   return (
     <Router>
       <div className="app-container">
-        <nav className="nav-list">
-          <ul>
-            <li><Link to="/inde">Home</Link></li>
-          </ul>
-        </nav>
         <Switch>
-          <Route path="/inde">
-
+          <Route path="/index">
+            <Login></Login>
           </Route>
         </Switch>
       </div>
