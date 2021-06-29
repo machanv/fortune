@@ -10,6 +10,9 @@
       <li>
         <router-link to="/3d">3D动画</router-link>
       </li>
+      <li>
+        <router-link to="/css-effect">CSS样式</router-link>
+      </li>
     </ul>
     <div class="vue-container">
       <router-view></router-view>
@@ -27,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-@import '../src/assets/styles/style.scss';
+@import 'assets/styles/style.less';
 
 #app {
   position: absolute;

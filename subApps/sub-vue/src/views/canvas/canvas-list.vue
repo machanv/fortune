@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-  name: "IndexCanvas",
+  name: "canvas-list",
   data() {
     return {
       message: "Hello World",

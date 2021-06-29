@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "ant-design-vue": "^1.7.5",
+    "axios": "^0.21.1",
     "common": "file:../../common",
     "core-js": "^3.6.5",
     "eva.js": "^0.3.5",

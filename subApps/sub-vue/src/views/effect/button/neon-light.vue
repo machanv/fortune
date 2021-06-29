@@ -1,0 +1,132 @@
+<template>
+  <div class="btn-container">
+    <div class="light">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      Neon Button
+    </div>
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: "neon-light"
+}
+</script>
+
+<style scoped>
+.btn-container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 15rem;
+  background-color: #1e1b1f;
+}
+
+.light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  padding: 1rem 2rem;
+  color: #722def;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.light:hover {
+  background-color: #5410d0;
+  color: #ffffff;
+  box-shadow: 0 0 5px #5410d0,
+  0 0 25px #5410d0,
+  0 0 50px #5410d0,
+  0 0 200px #5410d0;
+}
+
+.light div {
+  position: absolute;
+}
+
+.light div:nth-child(1) {
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right, transparent, #5410d0);
+  animation: animate1 1s linear infinite;
+}
+
+.light div:nth-child(2) {
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(to bottom, transparent, #5410d0);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.light div:nth-child(3) {
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(to left, transparent, #5410d0);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.light div:nth-child(4) {
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(to top, transparent, #5410d0);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%, 100% {
+    top: 100%
+  }
+}
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%, 100% {
+    right: 100%;
+  }
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
+}
+</style>

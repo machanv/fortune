@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "LoadingEffect",
+  name: "loading-effect",
   mounted() {
     this.initCanvas();
   },

@@ -23,9 +23,9 @@ module.exports = {
   // },
   pluginOptions: {
     'style-resources-loader': {
-      preProcessor: 'sass',
+      preProcessor: 'less',
       patterns: [
-        path.resolve(__dirname, './src/assets/styles/*.scss')      //你的.scss文件所在目录
+        path.resolve(__dirname, './src/assets/styles/*.less')      //你的.scss文件所在目录
       ]
     }
   }

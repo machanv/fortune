@@ -24,7 +24,7 @@ export default {
   data: () => {
     return {
       username: 'voila',
-      num: 1,
+      // num: 1,
     }
   },
   computed: {

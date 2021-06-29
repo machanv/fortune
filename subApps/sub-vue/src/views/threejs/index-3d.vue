@@ -12,7 +12,7 @@ import {WEBGL} from 'three/examples/jsm/WebGL.js';
 // import * as three from '../../common/three';
 
 export default {
-  name: 'Index3D',
+  name: 'index-3d',
   data: () => {
     return {
       element: HTMLElement,
