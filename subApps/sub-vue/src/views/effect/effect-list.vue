@@ -1,7 +1,6 @@
 <template>
   <div class="">
-    
-    <neon-light></neon-light>
+    <neon-light v-bind:button-text="buttonText"></neon-light>
   </div>
 </template>
 
@@ -10,7 +9,12 @@ import NeonLight from './button/neon-light';
 
 export default {
   name: "effect-list",
-  components: {NeonLight}
+  components: {NeonLight},
+  data: () => {
+    return {
+      buttonText: 'Neon Button'
+    }
+  }
 }
 </script>
 

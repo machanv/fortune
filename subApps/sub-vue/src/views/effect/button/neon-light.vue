@@ -5,7 +5,7 @@
       <div></div>
       <div></div>
       <div></div>
-      Neon Button
+      {{ buttonText }}
     </div>
 
   </div>
@@ -13,7 +13,10 @@
 
 <script>
 export default {
-  name: "neon-light"
+  name: "neon-light",
+  props: {
+    buttonText: String
+  }
 }
 </script>
 
