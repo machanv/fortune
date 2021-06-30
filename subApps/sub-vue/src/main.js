@@ -6,6 +6,7 @@ import camelCase from "lodash/camelCase";
 import App from "./App.vue";
 import "./public-path";
 import routes from "./router";
+import routes from "./krouter";
 import store from "./store";
 
 Vue.use(VueRouter);
