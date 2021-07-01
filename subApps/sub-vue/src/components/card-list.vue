@@ -17,5 +17,8 @@ export default {
 </script>
 
 <style scoped>
-
+.card-list {
+  display: grid;
+  grid-template-columns: 150px;
+}
 </style>
