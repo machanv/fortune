@@ -7,7 +7,6 @@
       <div></div>
       {{ buttonText }}
     </div>
-
   </div>
 </template>
 

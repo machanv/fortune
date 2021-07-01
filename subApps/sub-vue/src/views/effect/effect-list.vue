@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import NeonLight from './button/neon-light';
+import NeonLight from '../../components/btns/neon-light';
 
 export default {
   name: "effect-list",

@@ -5,7 +5,7 @@ import CanvasList from "../views/canvas/canvas-list";
 import Index3D from "../views/threejs/index-3d";
 import LoadingEffect from '../views/canvas/loading-effect';
 import EffectList from '../views/effect/effect-list';
-import NeonLight from '../views/effect/button/neon-light';
+import NeonLight from '../components/btns/neon-light';
 
 Vue.use(VueRouter);
 

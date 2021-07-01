@@ -1,17 +1,13 @@
 <div class="full-wrapper">
-  <aside class="side-bar">
-    <div class="nav-bar">
-      <header class="header">
-        <p>{{title}}</p>
-      </header>
-      <nav>
-        <ul>
-          <li *ngFor="let item of navList" [ngClass]="{'selected':item.selected}" (click)="onSelected(item)">
-            <a routerLink="{{item.link}}"><span class="iconfont {{item.icon}}"></span>{{item.name}}</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </aside>
+  <header class="header-bar">
+    <nav class="nav-bar">
+      <ul>
+        <li><a routerLink="/"><img alt="logo"/></a></li>
+        <li *ngFor="let item of navList" [ngClass]="{'selected':item.selected}" (click)="onSelected(item)">
+          <a routerLink="{{item.link}}"><span class="iconfont {{item.icon}}"></span>{{item.name}}</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
   <div id="subappViewport" class="sub-viewport"></div>
 </div>
