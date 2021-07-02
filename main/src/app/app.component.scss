@@ -26,11 +26,14 @@ header.header-bar {
       li {
         display: block;
         padding: 0.5rem 2rem;
+        transition: 0.25s;
 
         a {
           display: block;
           color: $defaultWhite;
           line-height: 3rem;
+          font-size: 1.6rem;
+          border: none;
         }
 
         &:not(:first-child):hover {
@@ -40,7 +43,9 @@ header.header-bar {
       }
 
       li.selected {
+        position: relative;
         background-color: $primaryColor;
+        overflow: hidden;
       }
     }
   }

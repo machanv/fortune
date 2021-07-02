@@ -20,14 +20,34 @@ export default {
 
 <style scoped>
 .card-item-container {
-  box-shadow: 0 0 5px 5px #eeeeee;
+  display: inline-grid;
+  grid-template-columns: 24rem;
+  grid-template-rows: 16rem;
+  margin: 1rem;
+  border: 1px solid #eeeeee;
+  -moz-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.card-item-container:hover {
+  border: #5410d0 1px dashed;
+  box-shadow: 0 0 0.8rem .8rem #eeeeee;
 }
 
 .img-content {
+  width: 100%;
+  height: 15rem;
+  background-color: #eeeeee;
+}
 
+.img-content img {
+  width: 100%;
 }
 
 .title {
-
+  padding: 1rem;
 }
 </style>

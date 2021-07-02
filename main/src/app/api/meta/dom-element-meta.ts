@@ -9,7 +9,7 @@ export const NavBar: NavItem[] = [
     icon: 'iconindex',
     selected: false,
   },
-  {id: 1, name: 'react', link: 'react', icon: '', selected: false},
-  {id: 2, name: 'vue', link: 'vue', icon: '', selected: false},
-  {id: 3, name: 'angular', link: 'angular', icon: '', selected: false},
+  {id: 1, name: 'React', link: 'react', icon: '', selected: false},
+  {id: 2, name: 'Vue', link: 'vue', icon: '', selected: false},
+  {id: 3, name: 'Angular', link: 'angular', icon: '', selected: false},
 ];

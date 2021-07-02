@@ -1,6 +1,6 @@
 <template>
   <div class="card-list">
-    <card-item v-for="item of infoList"></card-item>
+    <card-item v-for="item of infoList" v-bind:infoObject="item" v-bind:key="item.id"></card-item>
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 .card-list {
-  display: grid;
-  grid-template-columns: 150px;
+  position: relative;
+  width: 100%;
 }
 </style>

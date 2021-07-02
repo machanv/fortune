@@ -1,88 +1,55 @@
 <template>
   <div class="container">
-    <div>
-      <p> {{ count }}</p>
-      <button v-on:click="increment">+</button>
-      <button v-on:click="decrement">-</button>
-    </div>
-    <div><p>输入每次变化的数值：</p><input type="number" v-model="num"/></div>
-    <div>
-      <p>{{ username }}</p>
-      <input type="text" v-model="username" v-bind:input="valueChanged"/>
-    </div>
-    <div>
-      <button v-on:click="weakmapFunc">action</button>
+    <div class="">
+      <card-content v-for="item of indexList" v-bind:content="item" v-bind:key="item.id"></card-content>
     </div>
   </div>
 </template>
 
 <script>
-import {mapActions, mapState, mapMutations} from 'vuex';
+import CardContent from '../components/card-content';
 
 export default {
   name: 'home',
+  components: {CardContent},
   data: () => {
     return {
-      username: 'voila',
-      // num: 1,
+      indexList: Array
     }
   },
-  computed: {
-    ...mapState({
-      count: 'count', num: 'num'
-    })
+  created() {
+    this.getInfoList();
   },
   methods: {
-    ...mapActions({
-      add: 'incrementBy'
-    }),
-    ...mapMutations({
-      increment: 'increment',
-      decrement: 'decrement',
-      getUsername: 'getUsername'
-    }),
-    /** 在文本框中输入数值，点击+、- 按钮，增加或者删除对应的数值
-     * */
-    valueChanged() {
-      this.$store.commit('getUsername', this.name);
-      // this.name = this.returnValue('username');
+    getInfoList() {
+      this.indexList = [
+        {
+          id: 0, contentTitle: 'canvas', desc: 'canvas', infoList: [
+            {id: '01', title: '霓虹灯效果按钮', img: ''},
+            {id: '02', title: 'er456265', img: ''},
+            {id: '03', title: 'er456265', img: ''},
+            {id: '04', title: 'er456265', img: ''},
+            {id: '05', title: 'er456265', img: ''},
+            {id: '06', title: 'er456265', img: ''},
+          ]
+        }, {
+          id: 2, contentTitle: '3D', desc: '', infoList: [
+            {id: '01', title: '霓虹灯效果按钮', img: ''},
+            {id: '02', title: 'er456265', img: ''},
+            {id: '03', title: 'er456265', img: ''},
+          ]
+        }
+      ]
     },
-    doAction() {
-      this.$store.dispatch('actionA').then(res => {
-        if (res) {
-          console.log(res);
-        }
-      })
-    },
-    weakmapFunc() {
-      const _counter = new WeakMap();
-      const _action = new WeakMap();
-
-      class Countdown {
-        constructor(counter, action) {
-          _counter.set(this, counter);
-          _action.set(this, action);
-        }
-
-        dec() {
-          let counter = _counter.get(this);
-          if (counter < 1) return;
-          counter--;
-          _counter.set(this, counter);
-          if (counter === 0) {
-            _action.get(this)();
-          }
-        }
-      }
-
-      const c = new Countdown(2, () => console.log('DONE'));
-
-      c.dec()
-      c.dec()
-    }
-    /* returnValue(value) {
-       return this.$store.state[value];
-     }*/
   }
 }
 </script>
+<style scoped>
+@media screen and (min-width: 1200px) {
+  .container {
+    margin: 0 auto;
+    width: 1200px;
+  }
+}
+
+</style>

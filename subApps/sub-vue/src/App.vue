@@ -1,19 +1,12 @@
 <template>
   <div id="app">
-    <ul>
-      <li>
-        <router-link to="/">首页</router-link>
-      </li>
-      <li>
-        <router-link to="/2d">2D动画</router-link>
-      </li>
-      <li>
-        <router-link to="/3d">3D动画</router-link>
-      </li>
-      <li>
-        <router-link to="/css-effect">CSS样式</router-link>
-      </li>
-    </ul>
+    <div class="main-contanier">
+      <ul>
+        <li v-for="link of routerLinks" v-bind:key="link.id">
+          <router-link v-bind:to="link.to">{{ link.name }}</router-link>
+        </li>
+      </ul>
+    </div>
     <div class="vue-container">
       <router-view></router-view>
     </div>
@@ -26,6 +19,22 @@ export default {
   name: "App",
   store,
   components: {},
+  data: () => {
+    return {
+      routerLinks: Array,
+    }
+  }, created() {
+    this.getRouterLinks();
+  }, methods: {
+    getRouterLinks() {
+      this.routerLinks = [
+        {id: 0, name: '首页', to: '/'},
+        {id: 1, name: '2D动画', to: '/2d'},
+        {id: 2, name: '3D动画', to: '/3d'},
+        {id: 3, name: 'CSS样式', to: '//css-effect'},
+      ]
+    }
+  }
 };
 </script>
 
@@ -39,7 +48,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /*text-align: center;*/
   color: #2c3e50;
 }
 
