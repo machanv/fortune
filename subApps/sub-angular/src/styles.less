@@ -78,6 +78,10 @@ body {
     float: left;
   }
 
+  .form-content {
+
+  }
+
   .form-control {
     float: left;
   }
@@ -93,16 +97,17 @@ body {
 
 .form-control {
   width: 100%;
+  padding: 0.5rem 1rem;
   .border();
   border-color: @lightgrey;
   .border-radius();
   font-size: 1.4rem;
-  line-height: 2;
+  line-height: 1.5;
   outline: none;
   display: block;
 }
 
-button[type="button"] {
+button[type="button"], button[type="submit"] {
   .border-radius();
   outline: none;
   cursor: pointer;
@@ -113,6 +118,7 @@ button[type="button"] {
   border-width: 1px;
   border-style: solid;
   color: @defaultWhite;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -144,6 +150,10 @@ button[type="button"] {
 .btn-block {
   display: block;
   width: 100%;
+}
+
+select, optgroup, option {
+  line-height: 1.5;
 }
 
 

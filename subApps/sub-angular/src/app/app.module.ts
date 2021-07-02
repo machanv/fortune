@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CookieModule} from 'ngx-cookie';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -13,7 +13,9 @@ import {EmptyComponent} from './components/empty/empty.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, CookieModule.forRoot(),
+    ReactiveFormsModule,
+    AppRoutingModule,
+    CookieModule.forRoot(),
     FormsModule
   ],
   providers: [],
