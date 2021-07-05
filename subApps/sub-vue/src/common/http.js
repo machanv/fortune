@@ -2,7 +2,7 @@ import axios from "axios";
 // import Vue from 'vue';
 
 let http = {};
-http.getData = function (url) {
+http.get = function (url) {
   return new Promise((resolve, reject) => {
     axios.get(url).then(response => {
       resolve(response.data);
@@ -11,7 +11,7 @@ http.getData = function (url) {
     })
   })
 }
-http.postData = function (url, params) {
+http.post = function (url, params) {
   return new Promise((resolve, reject) => {
     axios.post(url, params).then(response => {
       resolve(response);

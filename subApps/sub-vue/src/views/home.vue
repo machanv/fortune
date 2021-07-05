@@ -23,7 +23,7 @@ export default {
   methods: {
     getInfoList: function () {
       const url = 'http://localhost:8080/values/index-list.json';
-      this.$http.getData(url).then(res => {
+      this.$http.get(url).then(res => {
         if (res) {
           this.indexList = res;
         }
