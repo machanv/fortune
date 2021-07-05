@@ -1,6 +1,6 @@
 <template>
   <div class="card-content">
-    <h2>{{ content.contentTitle }}</h2>
+    <h2>{{ content.title }}</h2>
     <div class="desc">
       <p>{{ content.desc || '暂无内容' }}</p>
     </div>

@@ -2,15 +2,19 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
-
+// import axios from 'axios';
+// import VueAxios from "vue-axios";
 import App from "./App.vue";
 import "./public-path";
+
 import routes from "./router";
 // import routes from "./krouter";
 import store from "./store";
+import http from './common/http';
 
 Vue.use(VueRouter);
-
+// Vue.use(axios, VueAxios);
+Vue.use(http);
 Vue.config.productionTip = false;
 
 //全局注册通用组件

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="">
-      <card-content v-for="item of indexList" v-bind:content="item" v-bind:key="item.id"></card-content>
+      <card-content v-for="item of indexList" v-bind:content="item.content" v-bind:key="item.id"></card-content>
     </div>
   </div>
 </template>
@@ -21,25 +21,13 @@ export default {
     this.getInfoList();
   },
   methods: {
-    getInfoList() {
-      this.indexList = [
-        {
-          id: 0, contentTitle: 'canvas', desc: 'canvas', infoList: [
-            {id: '01', title: '霓虹灯效果按钮', img: ''},
-            {id: '02', title: 'er456265', img: ''},
-            {id: '03', title: 'er456265', img: ''},
-            {id: '04', title: 'er456265', img: ''},
-            {id: '05', title: 'er456265', img: ''},
-            {id: '06', title: 'er456265', img: ''},
-          ]
-        }, {
-          id: 2, contentTitle: '3D', desc: '', infoList: [
-            {id: '01', title: '霓虹灯效果按钮', img: ''},
-            {id: '02', title: 'er456265', img: ''},
-            {id: '03', title: 'er456265', img: ''},
-          ]
+    getInfoList: function () {
+      const url = 'http://localhost:8080/values/index-list.json';
+      this.$http.getData(url).then(res => {
+        if (res) {
+          this.indexList = res;
         }
-      ]
+      })
     },
   }
 }
