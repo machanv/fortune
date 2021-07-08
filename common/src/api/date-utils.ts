@@ -1,6 +1,6 @@
 export class DateUtils {
   /**
-   * 获取时间戳
+   * 获取到秒的时间戳
    * */
   getTimestamp(date: Date) {
     if (date instanceof Date) {
