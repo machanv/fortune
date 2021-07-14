@@ -7,7 +7,7 @@ import LoadingEffect from '../views/canvas/loading-effect';
 
 // Vue.use(VueRouter);
 //
-// const routes = [
+// const router = [
 //   {path: "/", name: "home", component: Home},
 //   {
 //     path: "/2d", name: "2d", component: IndexCanvas,
@@ -15,4 +15,4 @@ import LoadingEffect from '../views/canvas/loading-effect';
 //   },
 //   {path: "/3d", name: "3d", component: Index3D},
 // ];
-// export default routes;
+// export default router;

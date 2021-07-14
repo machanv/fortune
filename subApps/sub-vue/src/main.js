@@ -6,7 +6,7 @@ import App from "./App.vue";
 import "./public-path";
 
 import routes from "./router";
-// import routes from "./krouter";
+// import router from "./krouter";
 import store from "./store";
 import http from './common/http';
 

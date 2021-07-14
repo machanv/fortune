@@ -1,15 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import "./index.css";
-import App from "./App";
+import App from './App'
 import reportWebVitals from "./reportWebVitals";
 
 function render(props = {}) {
-  const { container } = props;
+  const {container} = props;
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <App/>
     </React.StrictMode>,
     container
       ? container.querySelector("#root")
@@ -46,7 +45,7 @@ export async function mount(props) {
 }
 
 export async function unmount(props) {
-  const { container } = props;
+  const {container} = props;
   ReactDOM.unmountComponentAtNode(
     container
       ? container.querySelector("#root")
