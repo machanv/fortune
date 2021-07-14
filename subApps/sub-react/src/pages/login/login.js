@@ -4,7 +4,7 @@ import '../../styles/common.less';
 
 const Login = (props) => {
   const {isLogin, location} = props;
-  const {redirect} = location && location.state;
+  const {redirect} = '/user' //location && location.state;
   if (isLogin) {
     return <Redirect to={redirect}/>
   } else {
