@@ -3,7 +3,7 @@ import DashBoard from "../pages/dashboard/dashboard";
 import DocPage from "../pages/doc/doc-page";
 import User from "../pages/user/user";
 
-export const routeConfig = [
+const routeConfig = [
   {path: '/login', component: Login, auth: false},
   {
     path: '/admin', component: DashBoard, auth: true,
@@ -13,3 +13,4 @@ export const routeConfig = [
     ]
   }
 ]
+export default routeConfig
