@@ -1,7 +1,8 @@
-const { override, fixBabelImports } = require('customize-cra');
-module.exports = override(
-  // fixBabelImports('import', {
-  //   libraryName: 'antd-mobile',
-  //   style: 'css',
-  // }),
-);
+const {injectBabelPlugin} = require('react-app-rewired');
+const rewireLess = require('react-app-rewire-less');
+module.exports = function override(config, env) {
+  config = rewireLess.withLoaderOptions({
+    modifyVars: {"@primary-color": "#9F35FF"},
+  })(config, env);
+  return config;
+}
