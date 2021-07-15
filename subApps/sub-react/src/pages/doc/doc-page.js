@@ -1,4 +1,4 @@
 const DocPage = () => {
-  return <div></div>
+  return <div>doc</div>
 }
 export default DocPage
