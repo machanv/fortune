@@ -13,28 +13,30 @@
   </div>
 </template>
 <script>
-import store from "./store";
+import store from './store';
 
 export default {
-  name: "App",
+  name: 'App',
   store,
   components: {},
   data: () => {
     return {
       routerLinks: Array,
-    }
-  }, created() {
+    };
+  },
+  created() {
     this.getRouterLinks();
-  }, methods: {
+  },
+  methods: {
     getRouterLinks() {
       this.routerLinks = [
-        {id: 0, name: '首页', to: '/'},
-        {id: 1, name: '2D动画', to: '/2d'},
-        {id: 2, name: '3D动画', to: '/3d'},
-        {id: 3, name: 'CSS样式', to: '//css-effect'},
-      ]
-    }
-  }
+        { id: 0, name: '首页', to: '/' },
+        { id: 1, name: '2D动画', to: '/2d' },
+        { id: 2, name: '3D动画', to: '/3d' },
+        { id: 3, name: 'CSS样式', to: '/css-effect' },
+      ];
+    },
+  },
 };
 </script>
 

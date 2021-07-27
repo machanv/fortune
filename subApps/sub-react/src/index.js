@@ -1,18 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from './App'
-import reportWebVitals from "./reportWebVitals";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.less';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
 function render(props = {}) {
-  const {container} = props;
+  const { container } = props;
   ReactDOM.render(
     <React.StrictMode>
-      <App/>
+      <App />
     </React.StrictMode>,
     container
-      ? container.querySelector("#root")
-      : document.getElementById("root")
+      ? container.querySelector('#root')
+      : document.getElementById('root')
   );
 }
 
@@ -35,21 +35,21 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log("[react16] react app bootstraped");
+  console.log('[react16] react app bootstraped');
 }
 
 export async function mount(props) {
-  console.log("[react16] props from main framework", props);
+  console.log('[react16] props from main framework', props);
   storeTest(props);
   render(props);
 }
 
 export async function unmount(props) {
-  const {container} = props;
+  const { container } = props;
   ReactDOM.unmountComponentAtNode(
     container
-      ? container.querySelector("#root")
-      : document.querySelector("#root")
+      ? container.querySelector('#root')
+      : document.querySelector('#root')
   );
 }
 

@@ -7,9 +7,7 @@
 </template>
 <script>
 import * as THREE from 'three';
-// const THREE = require('three');
-import {WEBGL} from 'three/examples/jsm/WebGL.js';
-// import * as three from '../../common/three';
+import { WEBGL } from 'three/examples/jsm/WebGL.js';
 
 export default {
   name: 'index-3d',
@@ -23,12 +21,10 @@ export default {
       material: THREE.MeshBasicMaterial,
       cube: THREE.Mesh,
       shaderMaterial: THREE.ShaderMaterial,
-      line: THREE.Line
-    }
+      line: THREE.Line,
+    };
   },
-  created() {
-
-  },
+  created() {},
   mounted() {
     this.supportWebGl();
   },
@@ -45,17 +41,25 @@ export default {
       }
     },
     initThree() {
-      this.camera = new THREE.PerspectiveCamera(70, this.element.clientWidth / this.element.clientHeight, 0.1, 10);
+      this.camera = new THREE.PerspectiveCamera(
+        70,
+        this.element.clientWidth / this.element.clientHeight,
+        0.1,
+        10
+      );
       this.camera.position.z = 1;
 
       this.renderer = new THREE.WebGL1Renderer();
-      this.renderer.setSize(this.element.clientWidth, this.element.clientHeight);
+      this.renderer.setSize(
+        this.element.clientWidth,
+        this.element.clientHeight
+      );
       this.element.appendChild(this.renderer.domElement);
       this.initObj();
     },
     initObj() {
       this.geometry = new THREE.BoxGeometry(1, 1, 1);
-      this.material = new THREE.MeshBasicMaterial({color: 0x00ff00});
+      this.material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
       this.cube = new THREE.Mesh(this.geometry, this.material);
       this.scene.add(this.cube);
 
@@ -68,26 +72,42 @@ export default {
       this.cube.rotation.y += 0.01;
       this.renderer.render(this.scene, this.camera);
     },
-    mangerView() { // 修改视角，目前貌似有点问题
+    mangerView() {
+      // 修改视角，目前貌似有点问题
       this.camera.position.set(0, 0, 100);
       this.camera.lookAt(0, 0, 0);
 
       this.renderer.render(this.scene, this.camera);
     },
     drwaLine() {
-      this.material = new THREE.LineBasicMaterial({color: 0x0000ff});
+      this.material = new THREE.LineBasicMaterial({ color: 0x0000ff });
       this.geometry = new THREE.BufferGeometry();
 
       const vertices = new Float32Array([
-        -1.0, -1.0, 1.0,
-        1.0, -1.0, 1.0,
-        1.0, 1.0, 1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
 
-        1.0, 1.0, 1.0,
-        -1.0, 1.0, 1.0,
-        -1.0, -1.0, 1.0
+        1.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        1.0,
       ]);
-      this.geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+      this.geometry.setAttribute(
+        'position',
+        new THREE.BufferAttribute(vertices, 3)
+      );
       // this.geometry.vertices.push(new THREE.Vector3(-10, 0, 0));
       // this.geometry.vertices.push(new THREE.Vector3(0, 10, 0));
       // this.geometry.vertices.push(new THREE.Vector3(10, 0, 0));
@@ -96,14 +116,15 @@ export default {
 
       this.scene.add(this.line);
       this.renderer.render(this.scene, this.camera);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 <style>
 .container {
+  margin: 0 auto;
   position: relative;
-  width: 100%;
+  width: 1200px;
   height: 100%;
 }
 
@@ -112,5 +133,4 @@ export default {
   width: 100%;
   height: calc(100% - 2.5rem);
 }
-
 </style>
