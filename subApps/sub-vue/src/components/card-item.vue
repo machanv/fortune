@@ -1,7 +1,7 @@
 <template>
-  <div class="card-item-container">
+  <div class="card-item-container" v-on:click="itemClicked(infoObject)">
     <div class="img-content">
-      <img v-bind:src="infoObject.img"/>
+      <img v-bind:src="infoObject.img" />
     </div>
     <div class="title">
       <p>{{ infoObject.title }}</p>
@@ -11,11 +11,19 @@
 
 <script>
 export default {
-  name: "card-item",
+  name: 'card-item',
   props: {
-    infoObject: Object
-  }
-}
+    infoObject: Object,
+  },
+  methods: {
+    itemClicked(item) {
+      if (item && item.url) {
+        console.log(item);
+        this.$router.push({ name: item.url });
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -34,7 +42,7 @@ export default {
 
 .card-item-container:hover {
   border: #5410d0 1px dashed;
-  box-shadow: 0 0 0.8rem .8rem #eeeeee;
+  box-shadow: 0 0 0.8rem 0.8rem #eeeeee;
 }
 
 .img-content {

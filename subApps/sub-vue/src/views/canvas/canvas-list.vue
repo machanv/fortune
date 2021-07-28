@@ -11,26 +11,29 @@
     <div class="canvas-wrapper">
       <router-view></router-view>
     </div>
-    <!--    {{ message }}-->
-    <!--    <canvas id="canvas" width="500px" height="400px"></canvas>-->
+    <loadingEffect></loadingEffect>
   </div>
 </template>
 <script>
+import loadingEffect from './loading-effect.vue';
 export default {
-  name: "canvas-list",
+  name: 'canvas-list',
+  components: {
+    loadingEffect,
+  },
   data() {
     return {
-      message: "Hello World",
+      message: 'Hello World',
     };
   },
   computed: {
     //   initCanvas()
   },
   methods: {
-    initCanvas: function () {
-      const canvas = document.getElementById("canvas");
-      const cxt = canvas.getContext("2d");
-      cxt.fillStyle = "#ffff00";
+    initCanvas: function() {
+      const canvas = document.getElementById('canvas');
+      const cxt = canvas.getContext('2d');
+      cxt.fillStyle = '#ffff00';
       cxt.fillRect(0, 0, 150, 75);
     },
   },
