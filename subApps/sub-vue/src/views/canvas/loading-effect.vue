@@ -31,6 +31,7 @@ export default {
         _self.speed += 0.1;
       })();
     }
+    this.canvas.addEventListener('mousedown', this.log);
   },
   methods: {
     initCanvas() {
@@ -75,6 +76,9 @@ export default {
       this.context.textBaseline = 'middle';
       this.context.fillText(n.toFixed(0) + '%', this.centerX, this.centerY);
       this.context.restore();
+    },
+    log(e) {
+      console.log('Mouse pressed on element', e);
     },
   },
 };
