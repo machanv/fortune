@@ -1,5 +1,7 @@
-export class CanvasUtils {
-  captureMouse = function(element) {
+const CanvasUtils = {};
+CanvasUtils.install = function(Vue) {
+  // options
+  Vue.captureMouse = function(element) {
     let mouse = { x: 0, y: 0 };
     element.addEventListener(
       'mousemove',
@@ -30,7 +32,7 @@ export class CanvasUtils {
     return mouse;
   };
 
-  captureTap = function(element) {
+  Vue.captureTap = function(element) {
     let touch = {
       x: null,
       y: null,
@@ -82,4 +84,4 @@ export class CanvasUtils {
 
     return touch;
   };
-}
+};

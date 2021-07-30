@@ -12,14 +12,17 @@
       <router-view></router-view>
     </div>
     <loadingEffect></loadingEffect>
+    <arrow></arrow>
   </div>
 </template>
 <script>
 import loadingEffect from './loading-effect.vue';
+import arrow from './arrow.vue';
 export default {
   name: 'canvas-list',
   components: {
     loadingEffect,
+    arrow,
   },
   data() {
     return {

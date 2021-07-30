@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: "common-canvas",
+  name: 'common-canvas',
   props: {
     info: Object,
     initCounter: Number,
