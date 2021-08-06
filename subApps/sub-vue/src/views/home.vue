@@ -1,20 +1,29 @@
 <template>
   <div class="container">
-    <div class="">
+    <ul>
+      <li v-on:click="toggleWaterFall()">water fall</li>
+      <li v-on:click="toggleWaterFall()">list</li>
+    </ul>
+    <div class="" v-if="!showWaterFall">
       <card-content v-for="item of indexList" v-bind:content="item.content" v-bind:key="item.id"></card-content>
+    </div>
+    <div class="" v-if="showWaterFall">
+      <water-fall v-bind:dataList="indexList"></water-fall>
     </div>
   </div>
 </template>
 
 <script>
 import CardContent from '../components/card-content';
+import WaterFall from '../components/water-fall/water-fall';
 
 export default {
   name: 'home',
-  components: {CardContent},
+  components: {CardContent, WaterFall},
   data: () => {
     return {
-      indexList: Array
+      indexList: Array,
+      showWaterFall: Boolean
     }
   },
   created() {
@@ -29,6 +38,9 @@ export default {
         }
       })
     },
+    toggleWaterFall() {
+      this.showWaterFall = !this.showWaterFall;
+    }
   }
 }
 </script>

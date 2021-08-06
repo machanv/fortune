@@ -1,12 +1,12 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-import '../../styles/common.less';
+import {Redirect} from 'react-router-dom';
+import '../../styles/common.scss';
 
 const Login = (props) => {
-  const { isLogin, location } = props;
-  const { redirect } = '/user'; //location && location.state;
+  const {isLogin, location} = props;
+  const {redirect} = '/user'; //location && location.state;
   if (isLogin) {
-    return <Redirect to={redirect} />;
+    return <Redirect to={redirect}/>;
   } else {
     return (
       <div className="login-wrapper">
@@ -15,13 +15,13 @@ const Login = (props) => {
             <div className="form-item">
               <label>username</label>
               <div className="item-content">
-                <input type="text" />
+                <input type="text"/>
               </div>
             </div>
             <div className="form-item">
               <label>password</label>
               <div className="item-content">
-                <input type="password" />
+                <input type="password"/>
               </div>
             </div>
           </form>

@@ -1,4 +1,4 @@
-@import url('./variable.less');
+@import './variable.scss';
 html {
   font-size: 10px;
 }
@@ -39,20 +39,20 @@ button {
   padding: 0.5rem 1rem;
   outline: none;
   border-radius: 0.5rem;
-  border: 1px solid @light-grey;
+  border: 1px solid $light-grey;
   cursor: pointer;
 }
 .btn {
   font-size: 1rem;
 }
 .btn-default {
-  border-color: @light-grey;
+  border-color: $light-grey;
 }
 .btn-primary {
-  border-color: @theme-color;
+  border-color: $theme-color;
 }
 .btn-danger {
-  // border-color: @danger-color;
+  // border-color: $danger-color;
 }
 .btn-sm {
   padding: 0.25rem 1rem;

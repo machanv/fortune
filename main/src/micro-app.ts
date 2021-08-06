@@ -1,20 +1,20 @@
 const microApps = [
   {
-    name: "sub-react",
-    entry: "//localhost:3000",
-    container: "#subappViewport",
-    activeRule: "/react",
+    name: 'sub-react',
+    entry: '//localhost:4322',
+    container: '#subAppViewport',
+    activeRule: '/react',
   },
   {
-    name: "sub-vue",
-    entry: "//localhost:8080",
-    container: "#subappViewport",
-    activeRule: "/vue",
-  },{
-    name: "sub-angular",
-    entry: "//localhost:4321",
-    container: "#subappViewport",
-    activeRule: "/angular",
+    name: 'sub-vue',
+    entry: '//localhost:8080',
+    container: '#subAppViewport',
+    activeRule: '/vue',
+  }, {
+    name: 'sub-angular',
+    entry: '//localhost:4321',
+    container: '#subAppViewport',
+    activeRule: '/angular',
   }
 ];
 

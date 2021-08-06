@@ -5,13 +5,15 @@ import camelCase from 'lodash/camelCase';
 import App from './App.vue';
 import './public-path';
 
-import CanvasUtils from './common/canvas';
+// import CanvasUtils from './common/canvas';
 
 import routes from './router';
 import store from './store';
 import http from './common/http';
 
-Vue.use(VueRouter, CanvasUtils, http);
+Vue.use(VueRouter);
+// Vue.use(CanvasUtils);
+Vue.use(http);
 Vue.config.productionTip = false;
 
 //全局注册通用组件
@@ -38,7 +40,7 @@ let router = null;
 let instance = null;
 
 function render(props = {}) {
-  const { container } = props;
+  const {container} = props;
   router = new VueRouter({
     base: window.__POWERED_BY_QIANKUN__ ? '/vue/' : '/',
     mode: 'history',
@@ -59,18 +61,18 @@ if (!window.__POWERED_BY_QIANKUN__) {
 
 function storeTest(props) {
   props.onGlobalStateChange &&
-    props.onGlobalStateChange(
-      (value, prev) =>
-        console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev),
-      true
-    );
+  props.onGlobalStateChange(
+    (value, prev) =>
+      console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev),
+    true
+  );
   props.setGlobalState &&
-    props.setGlobalState({
-      ignore: props.name,
-      user: {
-        name: props.name,
-      },
-    });
+  props.setGlobalState({
+    ignore: props.name,
+    user: {
+      name: props.name,
+    },
+  });
 }
 
 export async function bootstrap() {
