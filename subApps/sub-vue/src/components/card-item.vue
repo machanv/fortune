@@ -1,7 +1,7 @@
 <template>
   <div class="card-item-container" v-on:click="itemClicked(infoObject)">
     <div class="img-content">
-      <img v-bind:src="infoObject.img" />
+      <img v-bind:src="infoObject.img"/>
     </div>
     <div class="title">
       <p>{{ infoObject.title }}</p>
@@ -19,7 +19,7 @@ export default {
     itemClicked(item) {
       if (item && item.url) {
         console.log(item);
-        this.$router.push({ name: item.url });
+        this.$router.push({name: item.url});
       }
     },
   },
@@ -49,10 +49,13 @@ export default {
   width: 100%;
   height: 15rem;
   background-color: #eeeeee;
+  overflow: hidden;
 }
 
 .img-content img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .title {
