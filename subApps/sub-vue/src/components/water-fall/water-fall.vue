@@ -43,24 +43,25 @@ export default {
         const containerWidth = container.clientWidth;
         const split = containerWidth / items[0].clientWidth;
         const heightArr = new Array(split).fill(0);
+        let imgIndex = 0;
         items.forEach((item, index) => {
           const width = item.clientWidth;
           const height = item.clientHeight;
-          const imgIndex = index % split;
 
           if (index >= split) {
             let min = heightArr[0];
-            let before = 0;
+
             for (let i = 0; i < heightArr.length; i++) {
-              if (min >= heightArr[i]) {
+              if (min > heightArr[i]) {
                 min = heightArr[i];
-                before = i;
+                imgIndex = i;
               }
             }
 
             item.style.top = min + 'px';
-            item.style.left = before * width + 'px';
+            item.style.left = imgIndex * width + 'px';
           } else {
+            imgIndex = index % split;
             item.style.left = imgIndex * width + 'px';
           }
 
