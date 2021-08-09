@@ -1,9 +1,11 @@
 <template>
   <div class="container">
-    <ul>
-      <li v-on:click="toggleWaterFall(true)">water fall</li>
-      <li v-on:click="toggleWaterFall(false)">list</li>
-    </ul>
+    <div class="view-toggle">
+      <ul>
+        <li v-on:click="toggleWaterFall(true)">water fall</li>
+        <li v-on:click="toggleWaterFall(false)">list</li>
+      </ul>
+    </div>
     <div class="" v-if="!showWaterFall">
       <card-content v-for="item of indexList" v-bind:content="item.content" v-bind:key="item.id"></card-content>
     </div>
@@ -49,7 +51,26 @@ export default {
   .container {
     margin: 0 auto;
     width: 1200px;
+    transition: 1s;
   }
+}
+
+.view-toggle {
+  position: absolute;
+  top: -3rem;
+  right: 1rem;
+  border-radius: 0.5rem;
+}
+
+.view-toggle ul li {
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border: 1px solid #aaaaaa;
+  cursor: pointer;
+}
+
+.view-toggle ul li:not(:first-child) {
+  border-left: none;
 }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="water-fall-wrapper">
+  <div class="water-fall-wrapper" ref="container">
     <div v-for="item of data" v-bind:key="item.id" class="list-item" ref="listItem">
       <div class="image" v-bind:style="{height:item.height}">
         <img v-bind:src="item.img"/>
@@ -20,35 +20,82 @@ export default {
       data: Array
     }
   },
+  created() {
+    this.formatData()
+  },
   mounted() {
     this.waterFall()
   },
   methods: {
-    waterFall() {
-      //todo
+    formatData() {
       let arr = [],
           list = [];
       arr = this.dataList.map(item => item.content);
       arr.forEach(node => {
         list = list.concat(node.infoList);
       })
+      this.data = [...list];
+    },
+    waterFall() {
+      const container = this.$refs.container;
       const items = this.$refs.listItem;
-      console.log(items);
+      if (container && items) {
+        const containerWidth = container.clientWidth;
+        const split = containerWidth / items[0].clientWidth;
+        const heightArr = new Array(split).fill(0);
+        items.forEach((item, index) => {
+          const width = item.clientWidth;
+          const height = item.clientHeight;
+          const imgIndex = index % split;
+
+          if (index >= split) {
+            let min = heightArr[0];
+            let before = 0;
+            for (let i = 0; i < heightArr.length; i++) {
+              if (min >= heightArr[i]) {
+                min = heightArr[i];
+                before = i;
+              }
+            }
+
+            item.style.top = min + 'px';
+            item.style.left = before * width + 'px';
+          } else {
+            item.style.left = imgIndex * width + 'px';
+          }
+
+          heightArr[imgIndex] = heightArr[imgIndex] + height;
+        })
+      }
     }
   }
 }
 </script>
 
 <style scoped>
+@import "../../assets/styles/style.less";
+
 .water-fall-wrapper {
   position: relative;
 }
 
 .list-item {
-
+  position: absolute;
+  width: 24rem;
+  margin: 1rem;
+  padding-right: 1rem;
+  /*display: grid;*/
+  /*grid-template-columns: 24rem;*/
+  /*grid-column-gap: 1rem;*/
 }
 
 .image {
+  width: 100%;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
 }
 
 .info {
