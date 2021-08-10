@@ -93,12 +93,13 @@ export default {
 }
 
 .list-item .item-container {
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   box-shadow: 0 0 0.1rem 0.1rem #eeeeee;
   overflow: hidden;
 }
 
 .item-container:hover {
+  border: 1px dashed #e2a5ad;
   box-shadow: 0 0 0.5rem 0.5rem #eeeeee;
 }
 
