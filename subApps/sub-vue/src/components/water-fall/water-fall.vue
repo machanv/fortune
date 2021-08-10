@@ -1,10 +1,12 @@
 <template>
   <div class="water-fall-wrapper" ref="container">
     <div v-for="item of data" v-bind:key="item.id" class="list-item" ref="listItem">
-      <div class="image" v-bind:style="{height:item.height}">
-        <img v-bind:src="item.img"/>
+      <div class="item-container">
+        <div class="image" v-bind:style="{height:item.height}">
+          <img v-bind:src="item.img"/>
+        </div>
+        <div class="info">{{ item.title }}</div>
       </div>
-      <div class="info">{{ item.title }}</div>
     </div>
   </div>
 </template>
@@ -59,7 +61,7 @@ export default {
               }
             }
 
-            item.style.top = min + 'px';
+            item.style.top = min + 20 + 'px';
             item.style.left = imgIndex * width + 'px';
             console.log('最小值:', min, imgIndex);
           } else {
@@ -86,10 +88,18 @@ export default {
   position: absolute;
   width: 24rem;
   margin: 1rem;
-  padding-right: 1rem;
-  /*display: grid;*/
-  /*grid-template-columns: 24rem;*/
-  /*grid-column-gap: 1rem;*/
+  padding-right: 2rem;
+  transition: 1s;
+}
+
+.list-item .item-container {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.1rem 0.1rem #eeeeee;
+  overflow: hidden;
+}
+
+.item-container:hover {
+  box-shadow: 0 0 0.5rem 0.5rem #eeeeee;
 }
 
 .image {
@@ -99,9 +109,15 @@ export default {
 .image img {
   width: 100%;
   height: auto;
+  cursor: pointer;
 }
 
 .info {
-
+  width: 100%;
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 2;
 }
 </style>

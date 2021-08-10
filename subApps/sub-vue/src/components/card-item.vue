@@ -61,4 +61,10 @@ export default {
 .title {
   padding: 1rem;
 }
+.title p{
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 </style>
