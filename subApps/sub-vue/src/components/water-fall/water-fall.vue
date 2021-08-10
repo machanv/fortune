@@ -47,19 +47,21 @@ export default {
         items.forEach((item, index) => {
           const width = item.clientWidth;
           const height = item.clientHeight;
-
+          imgIndex = 0;
           if (index >= split) {
             let min = heightArr[0];
 
             for (let i = 0; i < heightArr.length; i++) {
-              if (min > heightArr[i]) {
-                min = heightArr[i];
+              let cur = heightArr[i];
+              if (min > cur) {
+                min = cur;
                 imgIndex = i;
               }
             }
 
             item.style.top = min + 'px';
             item.style.left = imgIndex * width + 'px';
+            console.log('最小值:', min, imgIndex);
           } else {
             imgIndex = index % split;
             item.style.left = imgIndex * width + 'px';
