@@ -25,7 +25,7 @@ export default {
   data: () => {
     return {
       indexList: [],
-      showWaterFall: true
+      showWaterFall: false
     }
   },
   created() {

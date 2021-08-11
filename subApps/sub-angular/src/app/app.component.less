@@ -1,5 +1,81 @@
+@import "../assets/css/variable";
+
 .app-container {
-  position: absolute;
+  position: relative;
   height: 100%;
   width: 100%;
+
+  .main-container {
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    background-color: @defaultWhite;
+    //box-shadow: 0 0 5px 5px @primaryColor;
+    border: 1px dashed @primaryColor;
+    border-top: none;
+    border-bottom: none;
+
+    nav {
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+
+      ul {
+        position: relative;
+        display: inline-flex;
+
+        li {
+          position: relative;
+          display: inline-block;
+          padding: 1rem 2rem;
+          transition: 0.5s;
+
+          &:not(:last-child) :after {
+            content: '';
+            position: absolute;
+            height: 1rem;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border-right: 1px solid @darkPink;
+          }
+
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) and (min-width: 960px) {
+  .main-container {
+
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .main-container {
+    max-width: 1360px;
+    min-width: 1200px;
+
+    nav {
+      width: 50%;
+    }
+  }
+}
+
+.outter {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+.inner {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
 }
