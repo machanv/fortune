@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
-import {LoginGuard} from './modules/backend/login/login.guard';
 import {EmptyComponent} from './components/empty/empty.component';
 
 const routes: Routes = [

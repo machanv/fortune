@@ -1,12 +1,16 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {VideoComponent} from './video/video.component';
+import {VoiceComponent} from './voice/voice.component';
 
-const ExportsImportsEntryComponents = [VideoComponent];
+const ExportsImports = [
+  VideoComponent,
+  VoiceComponent
+];
 
 @NgModule({
-  declarations: [...ExportsImportsEntryComponents],
-  exports: [...ExportsImportsEntryComponents],
+  declarations: [...ExportsImports],
+  exports: [...ExportsImports],
   imports: [
     CommonModule
   ]

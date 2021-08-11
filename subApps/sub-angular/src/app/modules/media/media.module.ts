@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MediaComponent} from './media.component';
 import {RouterModule} from '@angular/router';
+import {MediaCommonModule} from './components/media-common.module';
 
 
 const routes = [
@@ -19,7 +20,8 @@ const routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MediaCommonModule
   ]
 })
 

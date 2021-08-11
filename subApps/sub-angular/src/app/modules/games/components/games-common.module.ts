@@ -4,14 +4,14 @@ import {PlaneComponent} from './plane/plane.component';
 import {SnakeComponent} from './snake/snake.component';
 
 
-const ExportsImportsEntryComponents = [
+const ExportsImports = [
   PlaneComponent,
   SnakeComponent
 ];
 
 @NgModule({
-  declarations: [...ExportsImportsEntryComponents],
-  exports: [...ExportsImportsEntryComponents],
+  declarations: [...ExportsImports],
+  exports: [...ExportsImports],
   imports: [
     CommonModule
   ]

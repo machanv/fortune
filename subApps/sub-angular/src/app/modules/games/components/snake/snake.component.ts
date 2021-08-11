@@ -26,7 +26,7 @@ export class SnakeComponent implements OnInit, AfterViewInit {
 
     const context = canvas.getContext('2d');
     context.fillStyle = '#dddddd';
-    context.fill();
+    context.fillRect(0, 0, 50, 60);
   }
 
   snake(): Snake<any> {
