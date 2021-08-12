@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-video',
@@ -7,10 +7,16 @@ import {Component, OnInit} from '@angular/core';
 })
 export class VideoComponent implements OnInit {
   // 视频
-  constructor() {
+  src: string = '';
+  controls: boolean = true;
+
+  // @ViewChild('videoElement') videoElement: ElementRef;
+
+  constructor(private renderer2: Renderer2) {
   }
 
   ngOnInit(): void {
+    // console.log(this.videoElement);
   }
 
 }
