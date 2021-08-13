@@ -1,3 +1,5 @@
+// import store from 'common';
+
 const microApps = [
   {
     name: 'sub-react',
@@ -18,4 +20,14 @@ const microApps = [
   }
 ];
 
+const apps = microApps.map(item => {
+  return {
+    ...item,
+    container: '#subAppViewport',
+    props: {
+      routerBase: item.activeRule,
+      // getGlobalState: store.getGlobalState
+    }
+  };
+});
 export default microApps;
