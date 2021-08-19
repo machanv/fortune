@@ -4,12 +4,12 @@ header.header-bar {
   position: relative;
   width: 100%;
   height: 4rem;
+  box-shadow: 0 0 2px 2px $pureGrey;
   //background-color: $subColor;
 
   nav {
     margin: 0 auto;
     text-align: center;
-    box-shadow: 0 0 2px 2px $pureGrey;
   }
 
   .nav-bar {

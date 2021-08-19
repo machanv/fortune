@@ -27,6 +27,7 @@ export default {
   },
   mounted() {
     this.waterFall()
+    window.addEventListener('resize', this.waterFall)
   },
   methods: {
     formatData() {
@@ -43,7 +44,7 @@ export default {
       const items = this.$refs.listItem;
       if (container && items) {
         const containerWidth = container.clientWidth;
-        const split = containerWidth / items[0].clientWidth;
+        const split = Math.floor(containerWidth / items[0].clientWidth);
         const heightArr = new Array(split).fill(0);
         let imgIndex = 0;
         items.forEach((item, index) => {
@@ -86,10 +87,36 @@ export default {
 
 .list-item {
   position: absolute;
-  width: 24rem;
   margin: 1rem;
   padding-right: 2rem;
   transition: 1s;
+}
+
+@media screen and (min-width: 720px) {
+  .list-item {
+    width: 24rem;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .list-item {
+    width: 50%;
+    max-height: 24rem;
+  }
+
+  .list-item .item-container {
+    height: 100%;
+  }
+
+  .image {
+    height: 20rem;
+    overflow: hidden;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .list-item .item-container {
@@ -111,6 +138,7 @@ export default {
   width: 100%;
   height: auto;
   cursor: pointer;
+  object-fit: cover;
 }
 
 .info {

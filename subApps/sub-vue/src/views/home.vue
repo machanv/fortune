@@ -47,11 +47,20 @@ export default {
 }
 </script>
 <style scoped>
+.container {
+  margin: 0 auto;
+  transition: 1s;
+}
+
 @media screen and (min-width: 1200px) {
   .container {
-    margin: 0 auto;
     width: 1200px;
-    transition: 1s;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 100%;
   }
 }
 
