@@ -15,6 +15,9 @@ const routes: Routes = [
   {
     path: 'media',
     loadChildren: () => import('./modules/media/media.module').then((m) => m.MediaModule)
+  }, {
+    path: 'slider',
+    loadChildren: () => import('./modules/slider/slider.module').then((m) => m.SliderModule)
   },
   {path: '', redirectTo: '', pathMatch: 'full'},
   {path: '**', component: EmptyComponent},

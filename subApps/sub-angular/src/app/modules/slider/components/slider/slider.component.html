@@ -1,0 +1,19 @@
+<div class="full-wrapper">
+  <div class="image-list">
+    <div id="listContainer" class="list-container">
+      <div class="image-item" *ngFor="let item of imagesList;let i = index"
+           [ngClass]="{'show':i===currentIndex}">
+        <div class="image-content">
+          <img [src]="item.src" [alt]="item.title"/>
+        </div>
+        <div class="carousel-title" *ngIf="item.title">{{item.title}}</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="slider-opt">
+    <ul>
+      <li *ngFor="let item of imagesList;let i = index" (click)="toggleIndex(i)">{{i}}</li>
+    </ul>
+  </div>
+</div>
