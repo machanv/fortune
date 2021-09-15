@@ -13,7 +13,8 @@
   </div>
   <div class="slider-opt">
     <ul>
-      <li *ngFor="let item of imagesList;let i = index" (click)="toggleIndex(i)">{{i}}</li>
+      <li *ngFor="let item of imagesList;let i = index" [ngClass]="{'active':i===currentIndex}"
+          (click)="toggleIndex(i)"></li>
     </ul>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, ElementRef, OnInit, Renderer2} from '@angular/core';
+import {interval, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-slider',
@@ -13,14 +14,17 @@ export class SliderComponent implements OnInit, AfterViewInit {
     {src: 'assets/images/3.jfif', title: 'aaa3a'},
     {src: 'assets/images/4.jpg', title: 'aaa4a'},
     {src: 'assets/images/5.jfif', title: 'aa5aa'},
-    {src: 'assets/images/5.jfif', title: 'aa5aa'},
   ];
 
   currentIndex: any = 0;
   listContainer: any;
   imageDomList: any;
 
-  ratio = 0.9;
+  interval: any = 5000;
+
+  ratio = 0.95;
+
+  timeIntervalSub: Subscription | undefined;
 
   constructor(private elementRef: ElementRef,
               private renderer2: Renderer2) {
@@ -33,6 +37,13 @@ export class SliderComponent implements OnInit, AfterViewInit {
     this.listContainer = this.elementRef.nativeElement.querySelector('#listContainer');
     this.imageDomList = this.listContainer.children;
     this.formatStyle();
+    this.timeIntervalSub = interval(this.interval).subscribe(() => {
+      this.currentIndex++;
+      if (this.currentIndex > this.imageDomList.length - 1) {
+        this.currentIndex = 0;
+      }
+      this.formatStyle();
+    });
   }
 
   toggleIndex(i: any): void {
