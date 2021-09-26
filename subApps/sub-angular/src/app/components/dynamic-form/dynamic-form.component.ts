@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {QuestionBase, QuestionControlService} from '../../api';
+import {HttpService, QuestionBase, QuestionControlService} from '../../api';
 import {FormGroup} from '@angular/forms';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -19,9 +20,10 @@ export class DynamicFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.qcs.toFormGroup(this.questions as QuestionBase<string>[]);
+
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.payLoad = JSON.stringify(this.form.getRawValue());
   }
 

@@ -4,7 +4,7 @@ export type SnakeItem<T> = {
   length?: number;
 };
 
-export class Snake<T> {
+export class SnakeClass<T> {
 
   constructor(options: SnakeItem<T>) {
   }

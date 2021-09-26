@@ -3,3 +3,10 @@ export type ObjectItem = {
   name?: string;
 };
 
+export type CommonResponse = {
+  code: number;
+  msg: string;
+  success: boolean;
+  data: any;
+};
+

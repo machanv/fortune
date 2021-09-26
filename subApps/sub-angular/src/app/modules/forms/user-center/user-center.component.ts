@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {QuestionBase, QuestionControlService} from '../../../api';
+import {HttpService, QuestionBase, QuestionControlService} from '../../../api';
 
 import {Observable} from 'rxjs';
+import {UserBase} from '../../../api/models/user-base';
 
 @Component({
   selector: 'app-user-center',
@@ -11,10 +12,22 @@ import {Observable} from 'rxjs';
 export class UserCenterComponent implements OnInit {
   questions$: Observable<QuestionBase<any>[]>;
 
-  constructor(private qcs: QuestionControlService) {
+  userList: UserBase[] = [];
+
+  constructor(private qcs: QuestionControlService,
+              private httpService: HttpService) {
     this.questions$ = qcs.getQuestions();
   }
 
   ngOnInit(): void {
+    this.getUserList();
+  }
+
+  getUserList(): void {
+    this.httpService.get('/users', {}).subscribe(res => {
+      if (res && res.data) {
+        this.userList = [...res.data];
+      }
+    });
   }
 }

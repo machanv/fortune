@@ -3,9 +3,7 @@ import {QuestionBase, TextBoxQuestion, DropdownQuestion} from '../models';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable, of} from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class QuestionControlService {
 
   constructor() {

@@ -1,3 +1,9 @@
 <div class="form-wrapper">
   <app-dynamic-form [questions]="questions$|async"></app-dynamic-form>
+  <div>
+    <ul>
+      <li *ngFor="let item of userList">{{item.username}}</li>
+    </ul>
+  </div>
+
 </div>

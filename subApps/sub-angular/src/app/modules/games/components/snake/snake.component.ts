@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef, OnInit} from '@angular/core';
-import {Snake, SnakeItem} from '../../../../api';
+import {SnakeClass, SnakeItem} from '../../../../api';
 
 @Component({
   selector: 'app-snake',
@@ -9,7 +9,7 @@ import {Snake, SnakeItem} from '../../../../api';
 export class SnakeComponent implements OnInit, AfterViewInit {
   // 贪吃蛇
 
-  snakeObj = new Snake({id: 0, name: '', length: 5});
+  snakeObj = new SnakeClass({id: 0, name: '', length: 5});
 
   constructor(private elementRef: ElementRef) {
   }
@@ -29,9 +29,8 @@ export class SnakeComponent implements OnInit, AfterViewInit {
     context.fillRect(0, 0, 50, 60);
   }
 
-  snake(): Snake<any> {
-
-    return this.snakeObj;
-  }
+  // snake(): SnakeClass<any> {
+  //   return this.snakeObj;
+  // }
 
 }

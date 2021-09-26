@@ -10,7 +10,9 @@ const declarationsEntryComponentsExports = [
 ];
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, ServiceModule],
+  imports: [CommonModule,
+    ReactiveFormsModule,
+    ServiceModule],
   declarations: [
     DynamicFormComponent,
     DynamicItemComponent
