@@ -12,6 +12,8 @@ export default function App() {
       <div className="app-container">
         <nav className="nav-list">
           <ul>
+            <li></li>
+            <li><input/></li>
             <li>
               <Link to="/react">首页</Link>
             </li>
