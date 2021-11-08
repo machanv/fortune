@@ -1,10 +1,11 @@
 export class DateUtils {
+  UTILS = {};
   /**
    * 获取到秒的时间戳
    * */
   getTimestamp(date: Date) {
     if (date instanceof Date) {
-      const timestamp = ((date.getTime()) / 1000).toFixed(0);
+      const timestamp = (date.getTime() / 1000).toFixed(0);
       return timestamp;
     }
   }
@@ -13,7 +14,6 @@ export class DateUtils {
    * 当前时间转日期字符串*/
   dateToYmd(date: Date) {
     if (date instanceof Date) {
-
     }
   }
 
