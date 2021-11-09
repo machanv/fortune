@@ -1,16 +1,16 @@
-const { name } = require("./package");
-const path = require("path");
+const { name } = require('./package');
+const path = require('path');
 
 module.exports = {
   devServer: {
     headers: {
-      "Access-Control-Allow-Origin": "*",
+      'Access-Control-Allow-Origin': '*',
     },
   },
   configureWebpack: {
     output: {
       library: `${name}-[name]`,
-      libraryTarget: "umd", // 把微应用打包成 umd 库格式
+      libraryTarget: 'umd', // 把微应用打包成 umd 库格式
       jsonpFunction: `webpackJsonp_${name}`,
     },
   },
@@ -25,8 +25,8 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [
-        path.resolve(__dirname, './src/assets/styles/*.less')      //你的.scss文件所在目录
-      ]
-    }
-  }
+        path.resolve(__dirname, './src/assets/styles/*.less'), //你的.less文件所在目录
+      ],
+    },
+  },
 };

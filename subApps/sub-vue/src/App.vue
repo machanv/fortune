@@ -1,11 +1,7 @@
 <template>
   <div id="app">
     <div class="main-contanier">
-      <ul>
-        <li v-for="link of routerLinks" v-bind:key="link.id">
-          <router-link v-bind:to="link.to">{{ link.name }}</router-link>
-        </li>
-      </ul>
+      <navHeader></navHeader>
     </div>
     <div class="vue-container">
       <router-view></router-view>
@@ -14,29 +10,16 @@
 </template>
 <script>
 import store from './store';
-
+import navHeader from './components/header.vue';
 export default {
   name: 'App',
   store,
-  components: {},
+  components: { navHeader },
   data: () => {
-    return {
-      routerLinks: Array,
-    };
+    return {};
   },
-  created() {
-    this.getRouterLinks();
-  },
-  methods: {
-    getRouterLinks() {
-      this.routerLinks = [
-        { id: 0, name: '首页', to: '/' },
-        { id: 1, name: '2D动画', to: '/2d' },
-        { id: 2, name: '3D动画', to: '/3d' },
-        { id: 3, name: 'CSS样式', to: '/css-effect' },
-      ];
-    },
-  },
+  created() {},
+  methods: {},
 };
 </script>
 
