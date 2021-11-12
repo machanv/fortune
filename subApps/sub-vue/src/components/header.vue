@@ -1,8 +1,8 @@
 <template>
   <header>
     <ul>
-      <li v-for="link of navList" v-bind:key="link.id">
-        <router-link v-bind:to="link.to">{{ link.name }}</router-link>
+      <li v-for="item of navList" :key="item.id">
+        <router-link :to="item.link">{{ item.name }}</router-link>
       </li>
     </ul>
   </header>
@@ -21,12 +21,12 @@ export default {
     this.getRouterLinks();
   },
   methods: {
-    getRouterLinks() {
-      axios.get(GlobalServer + '/nav-list').then(res => {
+    async getRouterLinks() {
+      await axios.get(GlobalServer + '/nav-list').then((res) => {
         if (res && res.data) {
-          console.log(res);
+          this.navList = res.data;
         }
-      })
+      });
     },
   },
 };
@@ -34,5 +34,11 @@ export default {
 <style>
 header {
   height: 50px;
+}
+header ul {
+}
+header ul li {
+  display: inline-flex;
+  padding: 1rem;
 }
 </style>
