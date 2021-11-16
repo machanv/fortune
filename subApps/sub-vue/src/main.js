@@ -2,6 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue';
 import './public-path';
 
@@ -12,6 +14,7 @@ import store from './store';
 // import http from 'common';
 
 Vue.use(VueRouter);
+Vue.use(ElementUI);
 // Vue.use(CanvasUtils);
 // Vue.use(http);
 Vue.config.productionTip = false;
