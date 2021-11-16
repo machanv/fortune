@@ -8,6 +8,11 @@ export default {
    *  验证输入的内容
    *  密码加密
    */
+  data: () => {
+    return {
+      isValid: false,
+    };
+  },
   methods: {},
 };
 </script>
