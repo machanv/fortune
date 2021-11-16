@@ -1,13 +1,13 @@
 <template>
   <div>
-    <!--    <navHeader></navHeader>-->
+    <navHeader></navHeader>
   </div>
 </template>
 <script>
-// import navHeader from '../components/header.vue';
+import navHeader from '../components/header.vue';
 
 export default {
-  // components: { navHeader },
+  components: { navHeader },
   data() {
     return {};
   },

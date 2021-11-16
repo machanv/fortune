@@ -10,11 +10,9 @@
 </template>
 <script>
 import store from './store';
-import navHeader from './components/header.vue';
 export default {
   name: 'App',
   store,
-  components: { navHeader },
   data: () => {
     return {};
   },
