@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <div class="main-contanier">
-      <navHeader></navHeader>
-    </div>
-    <div class="vue-container">
-      <router-view></router-view>
-    </div>
+      <!-- <router-view></router-view> -->
+      <el-row>
+        <el-col :span="24">
+          <el-input v-model="input" placeholder="请输入内容"></el-input>
+        </el-col>
+      </el-row>
   </div>
 </template>
 <script>
@@ -14,7 +14,9 @@ export default {
   name: 'App',
   store,
   data: () => {
-    return {};
+    return {
+      input:''
+    };
   },
   created() {},
   methods: {},

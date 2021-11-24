@@ -1,4 +1,4 @@
-import home from '../pages/home';
+import home from '../pages/home.vue';
 
 const routes = [
   { path: '', component: home },
