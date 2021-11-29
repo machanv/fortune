@@ -1,11 +1,6 @@
 <template>
   <div id="app">
-      <!-- <router-view></router-view> -->
-      <el-row>
-        <el-col :span="24">
-          <el-input v-model="input" placeholder="请输入内容"></el-input>
-        </el-col>
-      </el-row>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -15,7 +10,7 @@ export default {
   store,
   data: () => {
     return {
-      input:''
+      input: '',
     };
   },
   created() {},

@@ -9,7 +9,7 @@ import './public-path';
 
 // import CanvasUtils from './common/canvas';
 
-import routes from './router';
+import routers from './router';
 import store from './store';
 // import http from 'common';
 
@@ -47,7 +47,7 @@ function render(props = {}) {
   router = new VueRouter({
     base: window.__POWERED_BY_QIANKUN__ ? '/vue/' : '/',
     mode: 'history',
-    routes,
+    routes: routers,
   });
 
   instance = new Vue({

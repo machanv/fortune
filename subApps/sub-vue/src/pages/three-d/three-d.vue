@@ -6,13 +6,10 @@
   </div>
 </template>
 <script>
-import navHeader from '../components/nav-header.vue';
-import commonFooter from '../components/common-footer.vue';
+import navHeader from '../../components/nav-header.vue';
+import commonFooter from '../../components/common-footer.vue';
+
 export default {
   components: { navHeader, commonFooter },
-  data() {
-    return {};
-  },
 };
 </script>
-<style></style>
