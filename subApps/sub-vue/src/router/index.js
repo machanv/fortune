@@ -10,12 +10,12 @@ const routers = [
     path: '',
     component: Home,
   },
-  { path: '', name: 'login', component: Login },
+  { path: '/login', name: 'login', component: Login },
   {
     path: '/home',
     name: 'home',
     component: Home,
-    children: [{ path: 'index', name: 'index', component: IndexPage }],
+    children: [{ path: '', name: '', component: IndexPage }],
   },
   {
     path: '/canvas',

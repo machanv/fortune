@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo-wrapper">
-      <router-link to="/home/index">
+      <router-link to="/home">
         <img :src="logo" class="logo" />
       </router-link>
     </div>
@@ -10,6 +10,22 @@
         <router-link :to="item.link">{{ item.name }}</router-link>
       </li>
     </ul>
+    <el-menu
+      :default-active="activeIndex"
+      class="el-menu-demo"
+      mode="horizontal"
+      @select="handleSelect"
+    >
+      <el-menu-item :index="item.id" v-for="item of navList" :key="item.id">
+        <router-link :to="item.link">{{ item.name }}</router-link>
+      </el-menu-item>
+      <el-submenu index="2">
+        <template slot="title">1</template>
+        <el-menu-item index="2-1">2</el-menu-item>
+        <el-menu-item index="2-2">3</el-menu-item>
+        <el-menu-item index="2-3">4</el-menu-item>
+      </el-submenu>
+    </el-menu>
   </header>
 </template>
 <script>
@@ -22,6 +38,7 @@ export default {
     return {
       navList: Array,
       logo: logoImg,
+      activeIndex: '1',
     };
   },
   created() {
@@ -35,11 +52,14 @@ export default {
         }
       });
     },
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
+    },
   },
 };
 </script>
 <style>
-header {
+/* header {
   height: 50px;
   display: grid;
   grid-template-columns: 4.5rem auto;
@@ -55,5 +75,5 @@ header ul {
 header ul li {
   display: inline-flex;
   padding: 1rem;
-}
+} */
 </style>
