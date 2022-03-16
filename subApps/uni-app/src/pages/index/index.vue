@@ -2,7 +2,8 @@
   <view class="content">
     <image class="logo" src="/static/logo.png"></image>
     <view>
-      <text class="title">{{ title }}</text>
+     <view ref="testView">11111</view>
+      <button @click="getTest">获取test节点</button>
     </view>
   </view>
 </template>
@@ -15,7 +16,14 @@ export default {
     };
   },
   onLoad() {},
-  methods: {},
+  methods: {
+    getTest(){
+      console.log(this.$refs.testView)
+    },
+    getData(){
+
+    }
+  },
 };
 </script>
 
