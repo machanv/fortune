@@ -1,0 +1,16 @@
+@import './variable.scss';
+.full-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.form-control{
+    padding: 0.5rem 1rem;
+    border:1px solid #dddddd;
+    border-radius: 0.5rem;
+    outline: none;
+    &:focus,&:active{
+        border-color:$assitantCorlor;
+    }
+}
