@@ -8,6 +8,9 @@ const routes = [{ path: '', component: LoginComponent }];
 
 @NgModule({
   declarations: [LoginComponent],
-  imports: [CommonModule, ReactiveFormsModule, RouterModule.forChild(routes)],
+  imports: [CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(routes)],
 })
 export class LoginModule {}
