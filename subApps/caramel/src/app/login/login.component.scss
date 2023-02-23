@@ -1,11 +1,29 @@
+@import "~src/assets/styles/variable";
+
 .form-wrapper {
-  margin: 0 auto;
+  margin: 10rem auto;
   position: relative;
   width: 45rem;
-  padding: 2rem;
-  .row{
-    label{
+  padding: 4rem;
+
+  border: $basic-border;
+  border-color: $theme-color;
+  border-radius: $basic-radius;
+  background: linear-gradient($white,$light-blue);
+
+  .row {
+    label {
       width: 10%;
+    }
+  }
+
+  .btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+      margin-right: 2rem;
     }
   }
 }

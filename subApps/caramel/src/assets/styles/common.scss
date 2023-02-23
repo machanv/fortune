@@ -14,15 +14,48 @@
 .form-control {
   padding: 0.5rem 1rem;
   width: 100%;
-  border: 1px solid #dddddd;
+  border: $basic-border;
   border-radius: 0.5rem;
   outline: none;
 
   &:focus, &:active {
-    border-color: $assitantCorlor;
+    border-color: $auxiliary-color;
   }
 }
 
-button[type=button] {
-  padding: 0.5rem 1rem;
+button[type=button], button[type=submit], button[type=reset], .btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: $basic-radius;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: $theme-color;
+  color: $white;
+  &:active {
+    background-color: $medium-blue;
+  }
+}
+
+.btn-default {
+  background-color: $deep-grey;
+  color: $white;
+  &:active {
+    background-color: $deeper-grey;
+  }
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
+}
+
+.btn-group {
+  border-radius: $basic-radius;
+  overflow: hidden;
+
+  .btn {
+    border-radius: 0;
+  }
 }

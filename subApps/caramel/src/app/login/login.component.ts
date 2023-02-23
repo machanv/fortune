@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   });
   warningInfo: string = "";
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
@@ -27,17 +28,19 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     const loginInfo = this.loginFormGroup.value;
-    if (loginInfo.username === "" || loginInfo.password === "") {
+    if (loginInfo.username === null || loginInfo.username === "" || loginInfo.password === null || loginInfo.password === "") {
       this.warningInfo = "用户名或密码不能为空";
     } else if (loginInfo.username) {
 
     } else {
       this.warningInfo = "";
     }
+
   }
 
-  onReset(){
+  onReset() {
     this.warningInfo = "";
+    console.log(this.loginFormGroup.value);
   }
 
 }

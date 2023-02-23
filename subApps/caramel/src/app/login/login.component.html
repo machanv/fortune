@@ -3,16 +3,18 @@
     <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
       <div class="row">
         <label for="username" name="username">用户名</label>
-        <input id="username" type="text" class="form-control" formControlName="username"/>
+        <input id="username" type="text" class="form-control" formControlName="username" />
       </div>
       <div class="row">
         <label for="password" name="username">密码</label>
-        <input id="password" type="password" class="form-control" formControlName="password"/>
+        <input id="password" type="password" class="form-control" formControlName="password" />
       </div>
       <div class="row">{{warningInfo}}</div>
       <div class="row">
-        <button type="submit">登录</button>
-        <button type="reset" (click)="onReset()">重置</button>
+        <div class="btn-wrapper btn-block">
+          <button type="submit" class="btn btn-primary">登录</button>
+          <button type="reset" (click)="onReset()" class="btn btn-default">重置</button>
+        </div>
       </div>
     </form>
   </div>
