@@ -1,34 +1,34 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { EnterGuard } from './login/entry-guard';
-import { LoginModule } from './login/login.module';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { EnterGuard } from "./login/entry-guard";
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
+    path: "",
+    redirectTo: "/login",
+    pathMatch: "full"
   },
   {
-    path: 'not-found',
+    path: "login",
     loadChildren: () =>
-      import('./not-found/not-found.module').then((m) => m.NotFoundModule),
+      import("./login/login.module").then((m) => m.LoginModule)
   },
   {
-    path: 'login',
-    loadChildren: () =>
-      import('./login/login.module').then((m) => m.LoginModule),
-  },
-  {
-    path: 'dashboard',
+    path: "index",
     canActivate: [EnterGuard],
     loadChildren: () =>
-      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+      import("./index/index.module").then((m) => m.IndexModule)
   },
+  {
+    path: "**",
+    loadChildren: () =>
+      import("./not-found/not-found.module").then((m) => m.NotFoundModule)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

@@ -1,1 +1,21 @@
-<div></div>
+<div class="full-wrapper">
+  <div class="left-wrapper">
+    <div class="title">管理后台</div>
+    <aside class="menu-list">
+      <ul>
+        <li *ngFor="let item of navList" [ngClass]="{'selected':item.id===selectedNav?.id}">
+          <a [routerLink]="item.route" (click)="toggleNav(item)">{{item.name}}</a>
+        </li>
+      </ul>
+    </aside>
+  </div>
+  <div class="right-wrapper">
+    <header class="header">
+      <div class="header-icon"></div>
+      <div class="header-item">{{selectedNav.name}}</div>
+    </header>
+    <div class="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

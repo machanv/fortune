@@ -8,6 +8,13 @@ html {
   height: 100%;
 }
 
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 30px;
+    height: 100%;
+  }
+}
+
 body {
   position: relative;
   height: 100%;
@@ -22,6 +29,15 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.main-container {
+  position: relative;
+
 }
 
 

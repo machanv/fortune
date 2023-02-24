@@ -35,7 +35,11 @@ export class LoginComponent implements OnInit {
     } else {
       this.warningInfo = "";
     }
+    try {
+      this.router.navigate(["/index"]);
+    } catch (err) {
 
+    }
   }
 
   onReset() {
