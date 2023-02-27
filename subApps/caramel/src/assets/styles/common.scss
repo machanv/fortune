@@ -31,22 +31,27 @@ button[type=button], button[type=submit], button[type=reset], .btn {
 }
 
 .btn-primary {
+  @extend .btn;
   background-color: $theme-color;
   color: $white;
+
   &:active {
     background-color: $medium-blue;
   }
 }
 
 .btn-default {
+  @extend .btn;
   background-color: $deep-grey;
   color: $white;
+
   &:active {
     background-color: $deeper-grey;
   }
 }
 
 .btn-block {
+  @extend .btn;
   width: 100%;
   display: block;
 }
@@ -56,6 +61,16 @@ button[type=button], button[type=submit], button[type=reset], .btn {
   overflow: hidden;
 
   .btn {
+    @extend .btn;
     border-radius: 0;
   }
 }
+
+.main-container {
+  position: relative;
+}
+
+.card-container {
+  @include card;
+}
+

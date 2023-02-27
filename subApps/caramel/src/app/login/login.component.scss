@@ -9,7 +9,7 @@
   border: $basic-border;
   border-color: $theme-color;
   border-radius: $basic-radius;
-  background: linear-gradient($white,$light-blue);
+  background: linear-gradient($white, $light-blue);
 
   .row {
     label {
@@ -22,7 +22,7 @@
     justify-content: center;
     align-items: center;
 
-    .btn {
+    .margin {
       margin-right: 2rem;
     }
   }

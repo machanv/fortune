@@ -24,6 +24,47 @@ $success-color: #009e3a;
 
 /** block **/
 $basic-border: 1px solid $medium-grey;
-$blue-border:1px solid $medium-blue;
+$blue-border: 1px solid $medium-blue;
 $basic-radius: 5px;
+
+@mixin card {
+  position: relative;
+  border: $basic-border;
+  border-radius: $basic-radius;
+  -moz-border-radius: $basic-radius;
+  -webkit-border-radius: $basic-radius;
+  background-color: $white;
+  .card-header {
+    position: relative;
+    padding: 0.5rem 2rem;
+    border-bottom: $basic-border;
+
+    &:hover:before {
+      content: '';
+      position: absolute;
+      width: 0.8rem;
+      height: 0.8rem;
+      background-color: $theme-color;
+    }
+  }
+  .card-content {
+    position: relative;
+    padding: 1rem;
+  }
+}
+
 /** block **/
+
+/* link */
+@mixin link-colors($normal,$hover:$normal,$visited:$normal) {
+  color: $normal;
+  &:hover {
+    color: $hover;
+  }
+  &:visited {
+    color: $visited;
+  }
+}
+
+/* link */
+
