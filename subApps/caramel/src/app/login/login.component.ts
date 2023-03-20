@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
+import { HttpService } from "../../api";
 
 
 @Component({
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   });
   warningInfo: string = "";
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private httpService: HttpService) {
   }
 
   ngOnInit(): void {
