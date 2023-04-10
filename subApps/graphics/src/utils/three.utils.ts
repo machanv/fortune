@@ -8,4 +8,7 @@ export class ThreeEUtils {
 
   // 创建摄像头
   createCamera() {}
+
+  // 创建灯光
+  createLight() {}
 }
