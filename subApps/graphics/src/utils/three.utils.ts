@@ -1,8 +1,16 @@
 import * as THREE from 'three'
 
-export class ThreeEUtils {
+export default class ThreeEUtils {
+  id: string = ''
+  el: HTMLElement | null = null
+  constructor(id: string) {
+    this.id = id
+    if (this.id) {
+      this.el = document.getElementById(this.id)
+    }
+  }
   // 创建场景
-  createScene() {
+  initScene() {
     // return new THREE.createScene()
   }
 
